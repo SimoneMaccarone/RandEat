@@ -8,7 +8,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent {
-  searchQuery!: string;
+  searchQuery: string = ""; // Inizializzazione durante la dichiarazione
   searchResults: any[] = [];
 
   constructor(private recipeService: RecipeService) { }
