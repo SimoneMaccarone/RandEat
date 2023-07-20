@@ -21,7 +21,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-color: rgb(26, 26, 27);
+  background-color: rgb(254, 255, 134);
 }
 .container {
   width: 100%;
@@ -33,14 +33,14 @@ section {
 .brand {
   text-align: center;
   font-size: 4rem;
-  color: whitesmoke;
+  color: rgb(25, 167, 206);
   margin-bottom: 30px;
 }
 form {
   width: 90%;
   max-width: 400px;
   margin: 20px auto;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(25, 167, 206);
 }
 input {
   width: 90%;
@@ -49,7 +49,7 @@ input {
   border: none;
   outline: none;
   font-size: 2rem;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(25, 167, 206);
   display: inline-block;
 }
 form ion-icon {
@@ -69,7 +69,7 @@ form ion-icon {
 .item {
   width: 100%;
   border-radius: 8px;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(25, 167, 206);
   padding: 15px;
   overflow: hidden;
 }
@@ -84,7 +84,7 @@ form ion-icon {
   justify-content: space-between;
 }
 .search-result .title {
-  color: whitesmoke;
+  color: rgb(25, 167, 206);
   margin: 20px 10px 0 0;
   font-size: 1.8rem;
   font-weight: 400;
@@ -94,7 +94,7 @@ form ion-icon {
   text-align: center;
   width: 130px;
   padding: 10px 0;
-  background-color: #404041;
+  background-color: #C5CAE9;
   color: whitesmoke;
   font-size: 1.4rem;
   font-weight: 600;
