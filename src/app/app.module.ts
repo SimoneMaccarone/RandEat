@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RepiceComponent } from './components/repice/repice.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    RepiceComponent
+    RepiceComponent,
   ],
   imports: [
     BrowserModule,
