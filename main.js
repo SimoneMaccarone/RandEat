@@ -2,8 +2,8 @@ const searchForm = document.querySelector("form");
 const searchResultDiv = document.querySelector(".search-result");
 const container = document.querySelector(".container");
 let searchQuery = "";
-const APP_ID = "Use Your Own App ID Here";
-const APP_key = "Use Your Own App Key Here";
+const APP_ID = "746aee35";
+const APP_key = "7b2258d83d315207e9cc144eb81ef82b";
 // console.log(container)
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -49,16 +49,16 @@ function generateHTML(results) {
 // This Code is for only the floating card in right bottom corner
 // **********************
 
-const WebCifarIcon = document.querySelector("#webCifar-icon");
-const WebCifarEl = document.querySelector("#webCifar");
-const close = WebCifarEl.querySelector(".close");
-const youtubeLink = document.querySelector(".youtubeLink");
+// const WebCifarIcon = document.querySelector("#webCifar-icon");
+// const WebCifarEl = document.querySelector("#webCifar");
+// const close = WebCifarEl.querySelector(".close");
+// const youtubeLink = document.querySelector(".youtubeLink");
 
-WebCifarIcon.addEventListener("click", () => {
-  WebCifarEl.classList.add("active");
-});
-close.addEventListener("click", () => {
-  WebCifarEl.classList.remove("active");
-});
+// WebCifarIcon.addEventListener("click", () => {
+//   WebCifarEl.classList.add("active");
+// });
+// close.addEventListener("click", () => {
+//   WebCifarEl.classList.remove("active");
+// });
 
-youtubeLink.setAttribute("href", "https://youtu.be/x8EY0BlhPGk");
+// youtubeLink.setAttribute("href", "https://youtu.be/x8EY0BlhPGk");
