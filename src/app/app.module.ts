@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms'; // Assicurati di aver incluso Form
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RepiceComponent } from './components/repice/repice.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepiceComponent,
+    RecipeComponent,
   ],
   imports: [
     BrowserModule,
