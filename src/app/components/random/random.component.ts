@@ -7,18 +7,21 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   styleUrls: ['./random.component.scss']
 })
 export class RandomComponent {
-  searchQuery: string = ""; // Inizializzazione durante la dichiarazione
-  searchResults: any[] = [];
+  randomElement: any;
 
   constructor(private recipeService: RecipeService) { }
 
-  onSubmit() {
-    this.recipeService.searchRecipes(this.searchQuery).subscribe(
+  getRandomElement() {
+    this.recipeService.getRandomElement().subscribe(
       (data) => {
-        this.searchResults = data.hits;
+        // Assuming the response data contains an array of hits, get a random hit
+        if (data.hits && data.hits.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.hits.length);
+          this.randomElement = data.hits[randomIndex].recipe;
+        }
       },
       (error) => {
-        console.error(error);
+        console.error('Error fetching random element:', error);
       }
     );
   }

@@ -8,8 +8,8 @@ export class RecipeService {
 
   APP_ID: string = '746aee35';
   APP_KEY: string = '7b2258d83d315207e9cc144eb81ef82b';
-  // baseURL: string = 'https://api.edamam.com/search'
   baseURL: string = 'https://api.edamam.com/api/recipes/v2'
+  // baseURL: string = 'https://api.edamam.com/search'
 
   // URL_NUOVO: stirng = https://api.edamam.com/api/recipes/v2?type=public&q=${query.value}&app_id=${app_id}&app_key=${app_key}
 
@@ -19,47 +19,15 @@ export class RecipeService {
   searchRecipes(query: string): Observable<any> {
     const url = `${this.baseURL}?type=public&q=${query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}&from=0&to=20`;
     return this.http.get(url);
+    // MANCA IL NEXT & PREV page
   }
 
 
-  // RANDOM RECIPE
-  // getRandomElement(): Observable<any> {
-  //   const randomIndex = Math.floor(Math.random() * 10); // Assuming there are 10 elements in the API
-  //   return this.http.get<any>(`${this.apiUrl}?from=${randomIndex}&to=${randomIndex + 1}`);
-  // }
+  //RANDOM RECIPE
+  getRandomElement(): Observable<any> {
+    // Perform a random search query
+    const randomQuery = Math.random().toString(36).substring(7); // Generate a random query string
+    return this.http.get<any>(`${this.baseURL}?q=${randomQuery}`);
+  }
 
 }
-
-  // getRecipe() {
-  //   this.http.get<any>(this.BASE_URL_V1).pipe(
-  //     map((data) => data.hits)
-  //   ).subscribe(
-  //     (results) => {
-  //       this.searchResults = results;
-  //     },
-  //     (error) => {
-  //       console.log("Error fetching data: ", error);
-  //     }
-  //   );
-  // }
-  // onSearch(event: Event) {
-  //   event.preventDefault();
-  //   this.getRecipe();
-  //   // console.log(query);
-  // }
-
-  // async fetchAPI() {
-  // const baseURL = `https://api.edamam.com/search?q=${this.searchQuery}&app_id=${this.APP_ID}&app_key=${this.APP_key}&from=0&to=20`;
-  //   this.http.get<any>(baseURL).pipe(
-  //     map((data) => data.hits)
-  //   ).subscribe(
-  //     (results) => {
-  //       this.searchResults = results;
-  //     },
-  //     (error) => {
-  //       console.log("Error fetching data: ", error);
-  //     }
-  //   );
-  // }
-
-// https://api.edamam.com/search?q=pizza&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b&from=0&to=20

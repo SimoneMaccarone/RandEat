@@ -9,20 +9,11 @@
   COPIERO UGUALE IL RECIPE.COMPONENT HTML,CSS E TS-->
 <!----------------------------------------------------------------------------------------------------->
 
-  <form (submit)="onSubmit()">
-    <input type="text" placeholder="RANDOM FOOD" [(ngModel)]="searchQuery" name="searchQuery">
-    <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
-  </form>
-  <div class="search-result">
-    <div *ngFor="let result of searchResults" class="item">
-      <!-- <img [src]="result.recipe.image" alt="img">
-      <div class="flex-container">
-        <h1 class="title">{{ result.recipe.label }}</h1>
-        <a class="view-btn" target="_blank" [href]="result.recipe.url">View Recipe</a>
-      </div>
-      <p class="item-data">Calories: {{ result.recipe.calories.toFixed(2) }}</p>
-      <p class="item-data">Diet label: {{ result.recipe.dietLabels.length > 0 ? result.recipe.dietLabels:'NoDataFound'
-        }}</p>
-      <p class="item-data">Health labels: {{ result.recipe.healthLabels }}</p> -->
-    </div>
-  </div>
+<button (click)="getRandomElement()">Get Random Element</button>
+
+<div *ngIf="randomElement">
+  <h2>{{ randomElement.label }}</h2>
+  <img [src]="randomElement.image" alt="{{ randomElement.label }}">
+  <p>Source: {{ randomElement.source }}</p>
+  <!-- Display other properties of the randomElement as needed -->
+</div>
