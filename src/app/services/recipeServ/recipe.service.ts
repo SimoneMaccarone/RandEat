@@ -6,19 +6,27 @@ import { Observable, map, switchMap } from 'rxjs';
 })
 export class RecipeService {
 
-  // searchQuery: string = '';
-  // searchResults: any[] = [];
   APP_ID: string = '746aee35';
   APP_KEY: string = '7b2258d83d315207e9cc144eb81ef82b';
-  baseURL: string = 'https://api.edamam.com/search'
-  // baseURL_V2: string = 'https://api.edamam.com/api/recipes/v2'
+  // baseURL: string = 'https://api.edamam.com/search'
+  baseURL: string = 'https://api.edamam.com/api/recipes/v2'
+
+  // URL_NUOVO: stirng = https://api.edamam.com/api/recipes/v2?type=public&q=${query.value}&app_id=${app_id}&app_key=${app_key}
 
   constructor(private http: HttpClient) { }
 
+  // SEARCH RECIPE
   searchRecipes(query: string): Observable<any> {
-    const url = `${this.baseURL}?q=${query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}&from=0&to=20`;
+    const url = `${this.baseURL}?type=public&q=${query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}&from=0&to=20`;
     return this.http.get(url);
   }
+
+
+  // RANDOM RECIPE
+  // getRandomElement(): Observable<any> {
+  //   const randomIndex = Math.floor(Math.random() * 10); // Assuming there are 10 elements in the API
+  //   return this.http.get<any>(`${this.apiUrl}?from=${randomIndex}&to=${randomIndex + 1}`);
+  // }
 
 }
 
