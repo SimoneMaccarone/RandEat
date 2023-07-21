@@ -1,18 +1,12 @@
-<h1 class="brand">RandEat</h1>
-
 <section>
   <div class="container initial">
-    <!-- <form>
-      <input type="text" placeholder="Search Your..."  name="">
-      <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}">
-    </form> -->
-<nav>
-  <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn">Search Recipe</a>
-  <a routerLink="/random-food" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn">Random Food</a>
-</nav>
+    <h1 class="brand">RandEat</h1>
+    <router-outlet></router-outlet>
+    <nav>
+      <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn">Search
+        Recipe</a>
+      <a routerLink="/random-food" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn">Random
+        Food</a>
+    </nav>
   </div>
 </section>
-
-<router-outlet></router-outlet>
-
-

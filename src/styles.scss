@@ -12,6 +12,7 @@ body,
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: solid 1px green;
 }
 
 img {
@@ -32,7 +33,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  // background-color: rgb(26, 26, 27);
+  background-color: rgb(61, 61, 255);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
