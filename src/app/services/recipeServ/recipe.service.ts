@@ -11,7 +11,7 @@ export class RecipeService {
   baseURL: string = 'https://api.edamam.com/api/recipes/v2'
   // baseURL: string = 'https://api.edamam.com/search'
 
-  // URL_NUOVO: stirng = https://api.edamam.com/api/recipes/v2?type=public&q=${query.value}&app_id=${app_id}&app_key=${app_key}
+  //x POSTAMAN (watermelon) = https://api.edamam.com/api/recipes/v2?type=public&q=watermelon&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b&from=0&to=20
 
   constructor(private http: HttpClient) { }
 
@@ -24,10 +24,10 @@ export class RecipeService {
 
 
   //RANDOM RECIPE
-  getRandomElement(): Observable<any> {
-    // Perform a random search query
-    const randomQuery = Math.random().toString(36).substring(7); // Generate a random query string
-    return this.http.get<any>(`${this.baseURL}?q=${randomQuery}`);
-  }
+  // getRandomElement(): Observable<any> {
+  //   // Perform a random search query
+  //   const randomQuery = Math.random().toString(36).substring(7); // Generate a random query string
+  //   return this.http.get<any>(`${this.baseURL}?q=${randomQuery}`);
+  // }
 
 }
