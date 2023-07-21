@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hit, Root } from 'src/app/interfaces/recipe/recipe-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 })
 export class RecipeComponent {
   searchQuery: string = ""; // Inizializzazione durante la dichiarazione
-  searchResults: any[] = [];
+  searchResults: any[] = []; // da specificare (es: RootRecipe[])
 
   constructor(private recipeService: RecipeService) { }
 
@@ -18,11 +19,20 @@ export class RecipeComponent {
         this.searchResults = data.hits;
       },
       (error) => {
-        console.error(error);
+        console.error ('Errore nella ricerca', error);
       }
     );
   }
 
-
+  // nextPage() {
+  //   this.recipeService.searchRecipes(this.searchQuery).subscribe(
+  //     (page) => {
+  //       this.searchResults = page._links;
+  //     },
+  //     (error) => {
+  //       console.log('Errore Next Page', error);
+  //     }
+  //   );
+  // }
 
 }

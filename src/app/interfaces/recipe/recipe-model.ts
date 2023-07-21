@@ -1,25 +1,32 @@
+//NON OBBLIGATORIO, DA CAPIRE IL PERCHE
 
-
-//NON OBBLIGATORIO (non so ancora il perche)
-
-
-export interface RootRecipe {
-  q: string
+export interface Root {
   from: number
   to: number
-  more: boolean
   count: number
+  _links: Links
   hits: Hit[]
+}
+
+export interface Links {
+  next: Next
+}
+
+export interface Next {
+  href: string
+  title: string
 }
 
 export interface Hit {
   recipe: Recipe
+  _links: Links2
 }
 
 export interface Recipe {
   uri: string
   label: string
   image: string
+  images: Images
   source: string
   url: string
   shareAs: string
@@ -30,6 +37,8 @@ export interface Recipe {
   ingredientLines: string[]
   ingredients: Ingredient[]
   calories: number
+  totalCO2Emissions: number
+  co2EmissionsClass: string
   totalWeight: number
   totalTime: number
   cuisineType: string[]
@@ -40,6 +49,37 @@ export interface Recipe {
   digest: Digest[]
 }
 
+export interface Images {
+  THUMBNAIL: Thumbnail
+  SMALL: Small
+  REGULAR: Regular
+  LARGE?: Large
+}
+
+export interface Thumbnail {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Small {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Regular {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Large {
+  url: string
+  width: number
+  height: number
+}
+
 export interface Ingredient {
   text: string
   quantity: number
@@ -48,7 +88,7 @@ export interface Ingredient {
   weight: number
   foodCategory: string
   foodId: string
-  image?: string
+  image: string
 }
 
 export interface TotalNutrients {
@@ -62,7 +102,6 @@ export interface TotalNutrients {
   "CHOCDF.net": ChocdfNet
   FIBTG: Fibtg
   SUGAR: Sugar
-  "SUGAR.added"?: SugarAdded
   PROCNT: Procnt
   CHOLE: Chole
   NA: Na
@@ -82,7 +121,7 @@ export interface TotalNutrients {
   FOLFD: Folfd
   FOLAC: Folac
   VITB12: Vitb12
-  VITD: Vitd
+  VITD?: Vitd
   TOCPHA: Tocpha
   VITK1: Vitk1
   WATER: Water
@@ -143,12 +182,6 @@ export interface Fibtg {
 }
 
 export interface Sugar {
-  label: string
-  quantity: number
-  unit: string
-}
-
-export interface SugarAdded {
   label: string
   quantity: number
   unit: string
@@ -315,7 +348,7 @@ export interface TotalDaily {
   VITB6A: Vitb6A2
   FOLDFE: Foldfe2
   VITB12: Vitb122
-  VITD: Vitd2
+  VITD?: Vitd2
   TOCPHA: Tocpha2
   VITK1: Vitk12
 }
@@ -489,4 +522,13 @@ export interface Sub {
   hasRDI: boolean
   daily: number
   unit: string
+}
+
+export interface Links2 {
+  self: Self
+}
+
+export interface Self {
+  href: string
+  title: string
 }
