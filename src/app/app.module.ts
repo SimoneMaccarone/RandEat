@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms'; // Assicurati di aver incluso Form
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { RandomComponent } from './components/random/random.component';
 
 
 
@@ -13,6 +14,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
   declarations: [
     AppComponent,
     RecipeComponent,
+    RandomComponent,
   ],
   imports: [
     BrowserModule,
