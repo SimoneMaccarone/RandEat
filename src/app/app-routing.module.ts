@@ -5,7 +5,7 @@ import { RandomComponent } from './components/random/random.component';
 
 const routes: Routes = [
   { path: 'search-recipe', component: RecipeComponent },
-  { path: 'random-food', component: RandomComponent },
+  { path: 'random-recipe', component: RandomComponent },
 
   // { path: '',   redirectTo: '/search-recipe', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: RecipeComponent },// wrong search

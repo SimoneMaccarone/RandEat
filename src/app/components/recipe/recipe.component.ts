@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Hit, Root } from 'src/app/interfaces/recipe/recipe-model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Hit, RecipeModel } from 'src/app/interfaces/recipe-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
 @Component({
@@ -13,26 +13,16 @@ export class RecipeComponent {
 
   constructor(private recipeService: RecipeService) { }
 
+
   onSubmit() {
     this.recipeService.searchRecipes(this.searchQuery).subscribe(
       (data) => {
         this.searchResults = data.hits;
       },
       (error) => {
-        console.error ('Errore nella ricerca', error);
+        console.error(error);
       }
     );
   }
-
-  // nextPage() {
-  //   this.recipeService.searchRecipes(this.searchQuery).subscribe(
-  //     (page) => {
-  //       this.searchResults = page._links;
-  //     },
-  //     (error) => {
-  //       console.log('Errore Next Page', error);
-  //     }
-  //   );
-  // }
-
 }
+

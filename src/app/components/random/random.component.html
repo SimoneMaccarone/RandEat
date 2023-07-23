@@ -7,15 +7,28 @@
 
 <!-- ORA FARO DEI TEST CON L' API, VOGLIO SPERIMAENTARE E VEDERE COSA POSSO FARE.
   COPIERO UGUALE IL RECIPE.COMPONENT HTML,CSS E TS-->
+
+
+<!--GET https://www.themealdb.com/api/json/v1/1/random.php-->
 <!----------------------------------------------------------------------------------------------------->
+<!-- <div class="container">
+  <div *ngFor="let rand of randomRecipe">
+    <p> {{rand.strMeal}} </p>
+  </div>
+</div>
+<button> GENERATE RANDOM RECIPE</button> -->
 
 
-<!-- NON FUNZIONAAAAAA -->
 
-<!-- <button (click)="getRandomElement()">Get Random Element</button>
+<div class="search-result">
+  <div *ngFor="let rand of randomRecipe" class="item">
+    <img [src]="rand.strMealThumb" alt="">
 
-<div *ngIf="randomElement">
-  <h2>{{ randomElement.label }}</h2>
-  <img [src]="randomElement.image" alt="{{ randomElement.label }}">
-  <p>Source: {{ randomElement.source }}</p>
-</div> -->
+    <div class="pad">
+      <div class="flex-container">
+        <h1 class="title">{{ rand.strMeal }}</h1>
+        <a class="view-btn" target="_blank" [href]="rand.strSource">View Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>

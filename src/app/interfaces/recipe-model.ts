@@ -1,6 +1,4 @@
-//NON OBBLIGATORIO, DA CAPIRE IL PERCHE
-
-export interface Root {
+export interface RecipeModel {
   from: number
   to: number
   count: number
@@ -43,7 +41,7 @@ export interface Recipe {
   totalTime: number
   cuisineType: string[]
   mealType: string[]
-  dishType: string[]
+  dishType?: string[]
   totalNutrients: TotalNutrients
   totalDaily: TotalDaily
   digest: Digest[]
@@ -121,10 +119,11 @@ export interface TotalNutrients {
   FOLFD: Folfd
   FOLAC: Folac
   VITB12: Vitb12
-  VITD?: Vitd
+  VITD: Vitd
   TOCPHA: Tocpha
   VITK1: Vitk1
   WATER: Water
+  "SUGAR.added"?: SugarAdded
 }
 
 export interface EnercKcal {
@@ -325,6 +324,12 @@ export interface Water {
   unit: string
 }
 
+export interface SugarAdded {
+  label: string
+  quantity: number
+  unit: string
+}
+
 export interface TotalDaily {
   ENERC_KCAL: EnercKcal2
   FAT: Fat2
@@ -348,7 +353,7 @@ export interface TotalDaily {
   VITB6A: Vitb6A2
   FOLDFE: Foldfe2
   VITB12: Vitb122
-  VITD?: Vitd2
+  VITD: Vitd2
   TOCPHA: Tocpha2
   VITK1: Vitk12
 }
