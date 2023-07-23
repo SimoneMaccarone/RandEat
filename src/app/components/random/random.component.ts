@@ -11,6 +11,12 @@ export class RandomComponent {
 
   constructor(private recipeService: RecipeService) { }
 
+}
+
+
+
+// chiamare il cibo random con un generatore online e collegarlo al codice
+// vecchio codice non funzionante
   // getRandomElement() {
   //   this.recipeService.getRandomElement().subscribe(
   //     (data) => {
@@ -25,8 +31,3 @@ export class RandomComponent {
   //     }
   //   );
   // }
-}
-
-
-
-// chiamare il cibo random con un generatore online e collegarlo al codice
