@@ -1,7 +1,7 @@
-section{
+.main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -19,37 +19,13 @@ img {
   line-height: 2rem;
 }
 
-form {
-  width: 90%;
-  max-width: 400px;
-  margin: 20px auto;
-  background-color: rgb(223, 223, 223);
-}
-
-input {
-  width: 90%;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  font-size: 2rem;
-  background-color: rgb(223, 223, 223);
-  display: inline-block;
-}
-
-form ion-icon {
-  width: 8%;
-  font-size: 3rem;
-  margin-bottom: -8px;
-  color: rgb(75, 75, 75);
-  display: inline-block;
-}
-
 .search-result {
   // margin-top: 50px;
   width: 300px;
-  display: grid;
-  grid-gap: 25px;
+  // display: grid;
+  // grid-gap: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .item {
@@ -66,14 +42,15 @@ form ion-icon {
   // border-radius: 4px;
   padding: 0px;
 }
-.pad{
+
+.pad {
   padding: 15px;
 }
 
 .flex-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 15px;
 }
 
@@ -85,10 +62,17 @@ form ion-icon {
 }
 
 
-
-
-.reloadRecipe{
+.reloadRecipe {
   display: flex;
   justify-content: center;
   align-self: center;
+}
+
+
+details>summary {
+  list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
 }

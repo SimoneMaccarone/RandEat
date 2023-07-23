@@ -1,12 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+
 html,
 body,
 * {
   margin: 0;
   padding: 0;
 }
-
-//-------------------------------------------------------
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
 
 * {
   padding: 0;
@@ -15,12 +14,12 @@ body,
   // border: solid 1px green;
 }
 
-
-
 html {
   font-family: "Nunito";
   font-size: 12px;
 }
+
+//-------------------------------------------------------
 
 section {
   min-height: 100vh;
@@ -32,7 +31,7 @@ section {
   // background-color: rgb(61, 61, 255);
   background-image: url(./assets/wallpaper/3.jpg);
   background-position: center;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   image-rendering: optimizeQuality;
@@ -66,6 +65,7 @@ section {
   border-radius: 4px;
   align-self: flex-start;
 }
+
 .container.initial .brand {
   font-size: 7rem;
 }
@@ -99,4 +99,3 @@ section {
     font-size: 2rem;
   }
 }
-
