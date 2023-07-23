@@ -19,16 +19,20 @@
 <button> GENERATE RANDOM RECIPE</button> -->
 
 
+<section>
+  <div class="search-result">
+    <div *ngFor="let rand of randomRecipe" class="item">
+      <img [src]="rand.strMealThumb" alt="">
 
-<div class="search-result">
-  <div *ngFor="let rand of randomRecipe" class="item">
-    <img [src]="rand.strMealThumb" alt="">
-
-    <div class="pad">
-      <div class="flex-container">
-        <h1 class="title">{{ rand.strMeal }}</h1>
-        <a class="view-btn" target="_blank" [href]="rand.strSource">View Recipe</a>
+      <div class="pad">
+        <div class="flex-container">
+          <h1 class="title">{{ rand.strMeal }}</h1>
+          <a class="view-btn" target="_blank" [href]="rand.strSource">View Recipe</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <button class="view-btn reloadRecipe" (click)="loadRandomRecipe()"> Another Recipe</button>
+</section>
+
