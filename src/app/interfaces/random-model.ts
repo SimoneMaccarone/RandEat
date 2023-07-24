@@ -1,7 +1,3 @@
-// export interface RandomRecipeModel {
-//   meals: Meal[]
-// }
-
 export interface RandomRecipeModel {
   idMeal: string
   strMeal: string
@@ -57,3 +53,7 @@ export interface RandomRecipeModel {
   strCreativeCommonsConfirmed: any
   dateModified: any
 }
+
+// export interface RandomRecipeModel {
+//   meals: Meal[]
+// }

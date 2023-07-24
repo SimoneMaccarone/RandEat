@@ -13,6 +13,7 @@ export class RecipeComponent implements OnInit {
   linkNextPage: any;
 
   showBackToTop = false;
+  scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
   constructor(private recipeService: RecipeService) { this.onSubmit(); }
   ngOnInit(): void {
@@ -33,7 +34,8 @@ export class RecipeComponent implements OnInit {
   @HostListener('window:scroll', [])
   onScroll(): void {
     // this.showBackToTop = (window.scrollY > 250); // Mostra il pulsante solo dopo uno scroll di 200px
-    this.showBackToTop = (document.documentElement.scrollTop > 175);
+    // this.showBackToTop = (document.documentElement.scrollTop > 175);
+    this.showBackToTop = (window.scrollY > this.scrollOffsetToShowButton);
   }
 
   scrollToTop(): void {
