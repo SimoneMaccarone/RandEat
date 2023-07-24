@@ -3,6 +3,13 @@
   <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
 </form>
 
+<nav class="rout-btn">
+  <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Search
+    Recipe</a>
+    <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random
+      Recipe</a>
+    </nav>
+
 <div class="search-result">
   <div *ngFor="let result of searchResults" class="item">
     <img [src]="result.recipe.image" alt="">
