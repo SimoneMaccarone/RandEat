@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RandomComponent } from './components/random/random.component';
+import { IngredientComponent } from './components/ingredient/ingredient.component';
 
 
 
@@ -15,6 +16,7 @@ import { RandomComponent } from './components/random/random.component';
     AppComponent,
     RecipeComponent,
     RandomComponent,
+    IngredientComponent,
   ],
   imports: [
     BrowserModule,

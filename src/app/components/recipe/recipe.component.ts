@@ -1,5 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Hit, RecipeModel } from 'src/app/interfaces/recipe-model';
+import { Hit } from 'src/app/interfaces/recipe-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-  searchQuery: string = ""; // Inizializzazione durante la dichiarazione
-  searchResults: Hit[] = []; // da specificare (es: RootRecipe[])
-  linkNextPage: any;
+  searchQuery: string = "";
+  searchResults: Hit[] = [];
 
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
+  // linkNextPage: any;
   constructor(private recipeService: RecipeService) { this.onSubmit(); }
   ngOnInit(): void {
     this.onSubmit();
