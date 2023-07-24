@@ -26,10 +26,16 @@
 
       <p class="item-data">Calories: {{ result.recipe.calories.toFixed(2) }}</p>
       <p class="item-data">Diet label: {{ result.recipe.dietLabels.length>0?result.recipe.dietLabels:'NoDataFound'}}</p>
-      <!-- <p class="item-data">Health labels: <br> {{ result.recipe.healthLabels }}</p> -->.
+      <!-- <p class="item-data">Health labels: <br> {{ result.recipe.healthLabels }}</p> -->
     </div>
   </div>
 </div>
+
+
+<button class="back-to-top-btn" (click)="scrollToTop()">
+  <span>&uarr;</span>
+</button>
+
 
 
 <!-- NOTE -->
