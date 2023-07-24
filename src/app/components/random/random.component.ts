@@ -10,7 +10,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 export class RandomComponent implements OnInit {
 
   // randomRecipe : RandomRecipeModel[]=[];
-  randomRecipe : any;
+  randomRecipe : RandomRecipeModel[]=[];
 
 
   constructor(private recipeService: RecipeService) {this.loadRandomRecipe();}

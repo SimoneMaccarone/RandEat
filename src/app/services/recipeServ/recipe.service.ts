@@ -31,7 +31,7 @@ export class RecipeService {
 
   // RANDOM RECIPE
   // GET https://www.themealdb.com/api/json/v1/1/random.php
-  getRandomRecipe(): Observable<any>{
+  getRandomRecipe(): Observable<RandomRecipeModel[]>{
     return this.http.get<any>(this.baseURL_RANDOM).pipe(
       switchMap(randomRecipe => {
         const meals = randomRecipe.meals;
