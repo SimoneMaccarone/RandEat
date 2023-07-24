@@ -9,9 +9,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 })
 export class RandomComponent implements OnInit {
 
-  // randomRecipe : RandomRecipeModel[]=[];
   randomRecipe : RandomRecipeModel[]=[];
-
 
   constructor(private recipeService: RecipeService) {this.loadRandomRecipe();}
 
@@ -28,7 +26,3 @@ export class RandomComponent implements OnInit {
   }
 
 }
-
-
-
-// chiamare il cibo random con un generatore online e collegarlo al codice

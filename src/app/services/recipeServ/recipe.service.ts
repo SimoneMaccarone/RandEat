@@ -10,13 +10,14 @@ export class RecipeService {
   // RECIPE EDAMAM API
   APP_ID: string = '746aee35';
   APP_KEY: string = '7b2258d83d315207e9cc144eb81ef82b';
-  baseURL: string = 'https://api.edamam.com/api/recipes/v2'
-  // baseURL: string = 'https://api.edamam.com/search'
-  //x POSTAMAN = https://api.edamam.com/api/recipes/v2?type=public&q=watermelon&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b&from=0&to=20
-  //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-  baseURL_RANDOM : string = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
-  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+  baseURL: string = 'https://api.edamam.com/api/recipes/v2'
+  baseURL_RANDOM: string = 'https://www.themealdb.com/api/json/v1/1/random.php'
+  baseURL_INGR: string = 'https://www.themealdb.com/api/json/v1/1/filter.php?i'
+
+  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+  //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
+  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
   constructor(private http: HttpClient) { }
 
@@ -26,12 +27,8 @@ export class RecipeService {
     return this.http.get<any>(url)
   }
 
-
-  //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
-
   // RANDOM RECIPE
-  // GET https://www.themealdb.com/api/json/v1/1/random.php
-  getRandomRecipe(): Observable<RandomRecipeModel[]>{
+  getRandomRecipe(): Observable<RandomRecipeModel[]> {
     return this.http.get<any>(this.baseURL_RANDOM).pipe(
       switchMap(randomRecipe => {
         const meals = randomRecipe.meals;
