@@ -6,9 +6,13 @@
 <nav class="rout-btn">
   <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Search
     Recipe</a>
-    <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random
-      Recipe</a>
-    </nav>
+  <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random
+    Recipe</a>
+</nav>
+
+
+  <!-- <button class="view-btn" (click)="getNextPage()">Next Page </button> -->
+
 
 <div class="search-result">
   <div *ngFor="let result of searchResults" class="item">
@@ -28,9 +32,6 @@
 </div>
 
 
-
 <!-- NOTE -->
 <!-- per fare la net page una chiamata al link della prossima pagina-->
 <!-- tasto ritorna alla home in alto -->
-
-

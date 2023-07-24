@@ -10,8 +10,9 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 export class RecipeComponent implements OnInit {
   searchQuery: string = ""; // Inizializzazione durante la dichiarazione
   searchResults: Hit[] = []; // da specificare (es: RootRecipe[])
+  linkNextPage: any;
 
-  constructor(private recipeService: RecipeService) { this.onSubmit() }
+  constructor(private recipeService: RecipeService) { this.onSubmit(); }
   ngOnInit(): void {
     this.onSubmit();
   }
@@ -19,20 +20,22 @@ export class RecipeComponent implements OnInit {
   // SEARCH FOOD
   onSubmit() {
     this.recipeService.searchRecipes(this.searchQuery).subscribe(
-      //   (data) => {
-      //     this.searchResults = data.hits;
-      //   },
-      //   (error) => {
-      //     console.error(error);
-      //   }
-      { next: searchResults => this.searchResults = searchResults.hits, error: err => console.log('Errore nella ricerca', err) }
+      {
+        next: searchResults => this.searchResults = searchResults.hits,
+        error: err => console.log('Errore nella ricerca', err)
+      }
     );
   }
 
   //NEXT PAGE FOOD
-  getNextPage() {
-
-  }
+  // getNextPage() {
+  //   this.recipeService.searchRecipes(this.searchQuery).subscribe(
+  //     {
+  //       next: nextPage=> this.linkNextPage= nextPage._links.next.href,
+  //       error:err=> console.log('Errore nella next page',err)
+  //     }
+  //   )
+  // }
 
 
 
