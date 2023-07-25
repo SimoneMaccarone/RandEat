@@ -12,8 +12,8 @@ export class RecipeService {
   APP_KEY: string = '7b2258d83d315207e9cc144eb81ef82b';
 
   baseURL: string = 'https://api.edamam.com/api/recipes/v2'
+  baseURL_INGR: string = 'https://api.edamam.com/api/food-database/v2/parser?ingr={ingredient}&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b'
   baseURL_RANDOM: string = 'https://www.themealdb.com/api/json/v1/1/random.php'
-  baseURL_INGR: string = 'https://www.themealdb.com/api/json/v1/1/filter.php?i'
 
   // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
   //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
