@@ -13,7 +13,7 @@
 </form>
 
 <!-- Visualizza le ricette trovate -->
-<div *ngFor="let recipe of recipes">
+<div class="cazzo" *ngFor="let recipe of recipes">
   <img src="{{recipe.food.image}}" alt="">
   <h3>{{ recipe.food.label }}</h3>
   <p>Calorie: {{ recipe.food.nutrients.ENERC_KCAL }} Kcal</p>
