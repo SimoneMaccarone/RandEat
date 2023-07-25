@@ -47,11 +47,6 @@ export class RecipeComponent implements OnInit {
 
   }
 
-
-
-
-
-
   //NEXT PAGE FOOD
   // getNextPage() {
   //   this.recipeService.searchRecipes(this.searchQuery).subscribe(
