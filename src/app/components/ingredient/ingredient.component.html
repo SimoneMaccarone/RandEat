@@ -1,8 +1,22 @@
 <!-- ROUTING NAV -->
-<nav class="rout-btn">
+<!-- <nav class="rout-btn">
   <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Search Recipe</a>
   <a routerLink="/ingredient-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Ingredient Recipe</a>
   <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random Recipe</a>
-</nav>
+</nav> -->
 
 
+<!-- Input per inserire gli ingredienti separati da virgola -->
+
+<form (submit)="(searchRecipes)" (click)="searchRecipes(ingredientList.split(','))">
+  <input type="text" placeholder="Ingredients separated by commas" [(ngModel)]="ingredientList" name="searchQuery">
+</form>
+
+<!-- Visualizza le ricette trovate -->
+<div *ngFor="let recipe of recipes">
+  <img src="{{recipe.food.image}}" alt="">
+  <h3>{{ recipe.food.label }}</h3>
+  <p>Calorie: {{ recipe.food.nutrients.ENERC_KCAL }} Kcal</p>
+  <!-- Altre informazioni sull'ingrediente -->
+  <hr />
+</div>

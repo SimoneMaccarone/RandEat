@@ -8,6 +8,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 })
 export class IngredientComponent implements OnInit {
   recipes: any[] = [];
+  ingredientList: any;
 
   constructor(private recipeService: RecipeService){}
 
