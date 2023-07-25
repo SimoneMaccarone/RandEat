@@ -7,13 +7,19 @@ import { RecipeModel } from 'src/app/interfaces/recipe-model';
   providedIn: 'root'
 })
 export class RecipeService {
-  // RECIPE EDAMAM API
+  // SEARCH RECIPE EDAMAM API
   APP_ID: string = '746aee35';
   APP_KEY: string = '7b2258d83d315207e9cc144eb81ef82b';
-
   baseURL: string = 'https://api.edamam.com/api/recipes/v2'
-  baseURL_INGR: string = 'https://api.edamam.com/api/food-database/v2/parser?ingr={ingredient}&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b'
+
+  // INGREDIENTS RECIPE EDAMAM API
+  APP_ID_INGR: string = 'b9d26be2'
+  APP_KEY_INGR: string = '1250ba1410896310c611d2fa2659ff72'
+  baseURL_INGR: string = 'https://api.edamam.com/api/food-database/v2/parser'
+
   baseURL_RANDOM: string = 'https://www.themealdb.com/api/json/v1/1/random.php'
+
+  // https://api.edamam.com/api/food-database/v2/parser?ingr={ingredient}&app_id=b9d26be2&app_key=1250ba1410896310c611d2fa2659ff72
 
   // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
   //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
@@ -24,7 +30,7 @@ export class RecipeService {
   // SEARCH RECIPE
   searchRecipes(query: string): Observable<RecipeModel> {
     const url = `${this.baseURL}?type=public&q=${query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}&from=0&to=20`;
-    return this.http.get<any>(url)
+    return this.http.get<any>(url);
   }
 
   // RANDOM RECIPE
@@ -37,6 +43,13 @@ export class RecipeService {
         return getArray;
       })
     );
+  }
+
+  // INGREDIENTS RECIPE
+  searchIngredientsRecipe(ingredients: string[]): Observable<any> {
+    const joinedIngredients = ingredients.join(',');
+    const url=`${this.baseURL_INGR}?ingr=${joinedIngredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
+    return this.http.get<any>(url);
   }
 
 
