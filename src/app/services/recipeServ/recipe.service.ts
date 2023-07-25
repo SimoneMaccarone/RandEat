@@ -13,6 +13,7 @@ export class RecipeService {
   baseURL: string = 'https://api.edamam.com/api/recipes/v2'
 
   // INGREDIENTS RECIPE EDAMAM API
+  // https://api.edamam.com/search?q=eggs,bacon&app_id=746aee35&app_key=7b2258d83d315207e9cc144eb81ef82b
   APP_ID_INGR: string = 'b9d26be2'
   APP_KEY_INGR: string = '1250ba1410896310c611d2fa2659ff72'
   baseURL_INGR: string = 'https://api.edamam.com/api/food-database/v2/parser'
