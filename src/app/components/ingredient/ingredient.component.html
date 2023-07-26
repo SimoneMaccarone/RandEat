@@ -13,15 +13,15 @@
 </form> -->
 
 
-<form (submit)="searchRecipes(ingredients)">
+<!-- <form (submit)="searchRecipes(ingredients)">
   <input type="text" placeholder="Ingredients separated by commas..." [(ngModel)]="ingredients" name="searchQuery">
-</form>
+</form> -->
 
 
-<mat-form-field class="example-chip-list">
-  <mat-label>Favorite Fruits</mat-label>
-  <mat-chip-grid #chipGrid aria-label="Enter fruits">
-    <mat-chip-row *ngFor="let fruit of fruits"
+<mat-form-field class="form">
+  <mat-label>Your ingredients:</mat-label>
+  <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
+    <mat-chip-row *ngFor="let fruit of ingredients"
                   (removed)="remove(fruit)"
                   [editable]="true"
                   (edited)="edit(fruit, $event)"
@@ -31,12 +31,13 @@
         <mat-icon>cancel</mat-icon>
       </button>
     </mat-chip-row>
-    <input placeholder="New fruit..."
+    <input placeholder="Enter your ingredients..."
            [matChipInputFor]="chipGrid"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
            (matChipInputTokenEnd)="add($event)"/>
   </mat-chip-grid>
+  <button (submit)="searchRecipes(ingredients)"> CERCA</button>
 </mat-form-field>
 
 

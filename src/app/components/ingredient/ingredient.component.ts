@@ -5,17 +5,22 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
+
+
 export interface Fruit {
   name: string;
 }
+
+
 @Component({
   selector: 'app-ingredient',
   templateUrl: './ingredient.component.html',
   styleUrls: ['./ingredient.component.scss']
 })
+
 export class IngredientComponent  {
   recipes: any[]=[];
-  ingredients: string='';
+  // ingredients: string='';
 
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
@@ -23,33 +28,33 @@ export class IngredientComponent  {
   // material
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
+  ingredientsArrayFruits: Fruit[] = [];
 
   announcer = inject(LiveAnnouncer);
 
   constructor(private recipeService: RecipeService){ }
 
-  searchRecipes(ingredients:string):any {
-    const ingredientsArray = ingredients.split(',');
-    this.recipeService.searchRecipesByIngredients(ingredientsArray).subscribe(
+  searchRecipes(ingredientsArrayFruits:Fruit[]):any {
+    // const ingredientsArray = ingredients.split(',');
+    this.recipeService.searchRecipesByIngredients(ingredientsArrayFruits).subscribe(
       {
-        next: recipes => this.recipes = this.filterRecipesByIngredients(recipes.hits, ingredientsArray),
+        next: recipes => this.recipes = recipes.hits,
         error: err => console.log('Errore nella ricerca Ingredienti', err)
       }
     );
   }
 
-  filterRecipesByIngredients(recipes: any[], ingredients: string[]): any[] {
-    // Confronta gli ingredienti di ciascuna ricetta con l'elenco degli ingredienti cercati
-    return recipes.filter(recipe => this.containsAllIngredients(recipe.recipe.ingredientLines, ingredients));
-  }
+  // filterRecipesByIngredients(recipes: any[], ingredients: string[]): any[] {
+  //   // Confronta gli ingredienti di ciascuna ricetta con l'elenco degli ingredienti cercati
+  //   return recipes.filter(recipe => this.containsAllIngredients(recipe.recipe.ingredientLines, ingredients));
+  // }
 
-  containsAllIngredients(ingredientLines: string[], ingredients: string[]): boolean {
-    // Verifica se tutti gli ingredienti cercati sono presenti nelle righe degli ingredienti della ricetta
-    const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase().trim());
-    const lowerCaseIngredientLines = ingredientLines.map(line => line.toLowerCase());
-    return lowerCaseIngredients.every(ingredient => lowerCaseIngredientLines.some(line => line.includes(ingredient)));
-  }
+  // containsAllIngredients(ingredientLines: string[], ingredients: string[]): boolean {
+  //   // Verifica se tutti gli ingredienti cercati sono presenti nelle righe degli ingredienti della ricetta
+  //   const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase().trim());
+  //   const lowerCaseIngredientLines = ingredientLines.map(line => line.toLowerCase());
+  //   return lowerCaseIngredients.every(ingredient => lowerCaseIngredientLines.some(line => line.includes(ingredient)));
+  // }
   //🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅
 
   add(event: MatChipInputEvent): void {
@@ -57,7 +62,7 @@ export class IngredientComponent  {
 
     // Add our fruit
     if (value) {
-      this.fruits.push({name: value});
+      this.ingredientsArrayFruits.push({name: value});
     }
 
     // Clear the input value
@@ -65,10 +70,10 @@ export class IngredientComponent  {
   }
 
   remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
+    const index = this.ingredientsArrayFruits.indexOf(fruit);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.ingredientsArrayFruits.splice(index, 1);
 
       this.announcer.announce(`Removed ${fruit}`);
     }
@@ -84,9 +89,9 @@ export class IngredientComponent  {
     }
 
     // Edit existing fruit
-    const index = this.fruits.indexOf(fruit);
+    const index = this.ingredientsArrayFruits.indexOf(fruit);
     if (index >= 0) {
-      this.fruits[index].name = value;
+      this.ingredientsArrayFruits[index].name = value;
     }
   }
 
