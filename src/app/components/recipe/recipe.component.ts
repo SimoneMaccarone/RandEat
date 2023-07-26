@@ -7,18 +7,14 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss']
 })
-export class RecipeComponent implements OnInit {
+export class RecipeComponent  {
   searchQuery: string = '';
   searchResults: Hit[] = [];
 
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
-  // linkNextPage: any;
-  constructor(private recipeService: RecipeService) { this.onSubmit(); }
-  ngOnInit(): void {
-    this.onSubmit();
-  }
+  constructor(private recipeService: RecipeService) {  }
 
   // SEARCH FOOD
   onSubmit() {

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { IngredientsModel } from 'src/app/interfaces/ingredients-model';
+import { IngredientsModel,Hit } from 'src/app/interfaces/ingredients-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
 @Component({
@@ -7,24 +7,20 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   templateUrl: './ingredient.component.html',
   styleUrls: ['./ingredient.component.scss']
 })
-export class IngredientComponent implements OnInit {
-  recipes: IngredientsModel[] = [];
-  ingredientList: any[]=[];
+export class IngredientComponent  {
+  recipes: Hit[]=[];
+  ingredients: string='';
 
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
 
-  constructor(private recipeService: RecipeService){ this.searchRecipes() }
+  constructor(private recipeService: RecipeService){ }
 
-  ngOnInit(): void {
-    this.searchRecipes();
-  }
-
-  searchRecipes(): void {
-    this.recipeService.searchRecipesByIngredients(this.ingredientList).subscribe(
+  searchRecipes(ingredients:string[]) {
+    this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
       {
-        next: searchResults => this.recipes = searchResults.hints,
+        next: recipes => this.recipes = recipes.hits,
         error: err => console.log('Errore nella ricerca Ingredienti', err)
       }
     );
@@ -33,8 +29,6 @@ export class IngredientComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    // this.showBackToTop = (window.scrollY > 250); // Mostra il pulsante solo dopo uno scroll di 200px
-    // this.showBackToTop = (document.documentElement.scrollTop > 175);
     this.showBackToTop = (window.scrollY > this.scrollOffsetToShowButton);
   }
 

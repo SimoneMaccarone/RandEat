@@ -8,31 +8,22 @@
 
 <!-- Input per inserire gli ingredienti separati da virgola -->
 
-<form (submit)="(searchRecipes)" (click)="searchRecipes">
-  <input type="text" placeholder="Ingredients separated by commas" [(ngModel)]="ingredientList" name="searchQuery">
+<form (submit)="(searchRecipes)" (click)="searchRecipes(ingredients.split(','))">
+  <input type="text" placeholder="Ingredients separated by commas..." [(ngModel)]="ingredients" name="searchQuery">
 </form>
 
-<!-- Visualizza le ricette trovate -->
-<!-- <div class="cazzo" *ngFor="let recipe of recipes">
-  <img src="{{recipe.food.image}}" alt="">
-  <h3>{{ recipe.food.label }}</h3>
-  <p>Calorie: {{ recipe.food.nutrients.ENERC_KCAL }} Kcal</p>
-  <hr />
-</div> -->
-
-
 <div class="search-result">
-  <div *ngFor="let recipe of recipes" class="item">
-    <img [src]="recipe.food.image" alt="">
+  <div *ngFor="let result of recipes" class="item">
+    <img [src]="result.recipe.image" alt="">
 
     <div class="pad">
       <div class="flex-container">
-        <h1 class="title">{{ recipe.food.label }}</h1>
-        <a class="view-btn" target="_blank" [href]="recipe.food.shareAs">View Recipe</a>
+        <h1 class="title">{{ result.recipe.label }}</h1>
+        <a class="view-btn" target="_blank" [href]="result.recipe.shareAs">View Recipe</a>
       </div>
 
-      <p class="item-data">Calories: {{ recipe.food.ENERC_KCAL.toFixed(2) }}</p>
-      <p class="item-data">Diet label: {{ recipe.food.dietLabels.length>0?recipe.food.dietLabels:'NoDataFound'}}</p>
+      <p class="item-data">Calories: {{ result.recipe.calories.toFixed(2) }}</p>
+      <p class="item-data">Diet label: {{ result.recipe.dietLabels.length>0?result.recipe.dietLabels:'NoDataFound'}}</p>
       <!-- <p class="item-data">Health labels: <br> {{ result.recipe.healthLabels }}</p> -->
     </div>
   </div>

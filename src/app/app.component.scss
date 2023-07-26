@@ -1,9 +1,10 @@
-// .rout-btn{
-//   display: flex;
-//   justify-content: center;
-// }
+.rout-btn{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-// .nav-btn{
-//   margin: 20px;
-// }
-
+.nav-btn{
+  display: flex;
+  // margin-bottom: 15px;
+}
