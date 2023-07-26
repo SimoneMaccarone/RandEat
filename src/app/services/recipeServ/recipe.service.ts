@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, switchMap } from 'rxjs';
+import { IngredientsModel } from 'src/app/interfaces/ingredients-model';
 import { RandomRecipeModel } from 'src/app/interfaces/random-model';
 import { RecipeModel } from 'src/app/interfaces/recipe-model';
 @Injectable({
@@ -22,15 +23,22 @@ export class RecipeService {
 
   // https://api.edamam.com/api/food-database/v2/parser?ingr={ingredient}&app_id=b9d26be2&app_key=1250ba1410896310c611d2fa2659ff72
 
-  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-  //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
-  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+  //🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
+  // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
   constructor(private http: HttpClient) { }
 
   // SEARCH RECIPE
   searchRecipes(query: string): Observable<RecipeModel> {
     const url = `${this.baseURL}?type=public&q=${query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}&from=0&to=20`;
+    return this.http.get<any>(url);
+  }
+
+  // INGREDIENTS RECIPE
+  searchRecipesByIngredients(ingredients: string[]): Observable<IngredientsModel> {
+    const joinedIngredients = ingredients.join(',');
+    const url=`${this.baseURL_INGR}?ingr=${joinedIngredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
     return this.http.get<any>(url);
   }
 
@@ -45,19 +53,4 @@ export class RecipeService {
       })
     );
   }
-
-  // INGREDIENTS RECIPE
-  searchRecipesByIngredients(ingredients: string[]): Observable<any> {
-    const joinedIngredients = ingredients.join(',');
-    const url=`${this.baseURL_INGR}?ingr=${joinedIngredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
-    return this.http.get<any>(url);
-  }
-
-
-
-
-
-
-
-
 }

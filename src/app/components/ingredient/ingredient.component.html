@@ -8,15 +8,38 @@
 
 <!-- Input per inserire gli ingredienti separati da virgola -->
 
-<form (submit)="(searchRecipes)" (click)="searchRecipes(ingredientList.split(','))">
+<form (submit)="(searchRecipes)" (click)="searchRecipes">
   <input type="text" placeholder="Ingredients separated by commas" [(ngModel)]="ingredientList" name="searchQuery">
 </form>
 
 <!-- Visualizza le ricette trovate -->
-<div class="cazzo" *ngFor="let recipe of recipes">
+<!-- <div class="cazzo" *ngFor="let recipe of recipes">
   <img src="{{recipe.food.image}}" alt="">
   <h3>{{ recipe.food.label }}</h3>
   <p>Calorie: {{ recipe.food.nutrients.ENERC_KCAL }} Kcal</p>
-  <!-- Altre informazioni sull'ingrediente -->
   <hr />
+</div> -->
+
+
+<div class="search-result">
+  <div *ngFor="let recipe of recipes" class="item">
+    <img [src]="recipe.food.image" alt="">
+
+    <div class="pad">
+      <div class="flex-container">
+        <h1 class="title">{{ recipe.food.label }}</h1>
+        <a class="view-btn" target="_blank" [href]="recipe.food.shareAs">View Recipe</a>
+      </div>
+
+      <p class="item-data">Calories: {{ recipe.food.ENERC_KCAL.toFixed(2) }}</p>
+      <p class="item-data">Diet label: {{ recipe.food.dietLabels.length>0?recipe.food.dietLabels:'NoDataFound'}}</p>
+      <!-- <p class="item-data">Health labels: <br> {{ result.recipe.healthLabels }}</p> -->
+    </div>
+  </div>
 </div>
+
+
+<button class="back-to-top-btn" (click)="scrollToTop()" [class.show]="showBackToTop">
+  <span>&uarr;</span>
+</button>
+

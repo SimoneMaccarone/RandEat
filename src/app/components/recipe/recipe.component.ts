@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Hit } from 'src/app/interfaces/recipe-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
@@ -8,7 +8,7 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-  searchQuery: string = "";
+  searchQuery: string = '';
   searchResults: Hit[] = [];
 
   showBackToTop = false;
