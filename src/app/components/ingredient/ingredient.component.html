@@ -7,8 +7,13 @@
 
 
 <!-- Input per inserire gli ingredienti separati da virgola -->
-
+<!--
 <form (submit)="(searchRecipes)" (click)="searchRecipes(ingredients.split(','))">
+  <input type="text" placeholder="Ingredients separated by commas..." [(ngModel)]="ingredients" name="searchQuery">
+</form> -->
+
+
+<form (submit)="searchRecipes(ingredients)">
   <input type="text" placeholder="Ingredients separated by commas..." [(ngModel)]="ingredients" name="searchQuery">
 </form>
 
