@@ -1,7 +1,13 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { IngredientsModel,Hit } from 'src/app/interfaces/ingredients-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
-
+//      MATERIAL and EXTRA
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
+export interface Fruit {
+  name: string;
+}
 @Component({
   selector: 'app-ingredient',
   templateUrl: './ingredient.component.html',
@@ -14,6 +20,12 @@ export class IngredientComponent  {
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
+  // material
+  addOnBlur = true;
+  readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
+
+  announcer = inject(LiveAnnouncer);
 
   constructor(private recipeService: RecipeService){ }
 
@@ -38,8 +50,45 @@ export class IngredientComponent  {
     const lowerCaseIngredientLines = ingredientLines.map(line => line.toLowerCase());
     return lowerCaseIngredients.every(ingredient => lowerCaseIngredientLines.some(line => line.includes(ingredient)));
   }
+  //🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅
 
+  add(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
 
+    // Add our fruit
+    if (value) {
+      this.fruits.push({name: value});
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+  }
+
+  remove(fruit: Fruit): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+
+      this.announcer.announce(`Removed ${fruit}`);
+    }
+  }
+
+  edit(fruit: Fruit, event: MatChipEditedEvent) {
+    const value = event.value.trim();
+
+    // Remove fruit if it no longer has a name
+    if (!value) {
+      this.remove(fruit);
+      return;
+    }
+
+    // Edit existing fruit
+    const index = this.fruits.indexOf(fruit);
+    if (index >= 0) {
+      this.fruits[index].name = value;
+    }
+  }
 
 
 

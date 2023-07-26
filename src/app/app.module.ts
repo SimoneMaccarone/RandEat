@@ -8,6 +8,12 @@ import { AppComponent } from './app.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RandomComponent } from './components/random/random.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//      MATERIAL
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -23,7 +29,10 @@ import { IngredientComponent } from './components/ingredient/ingredient.componen
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
+    BrowserAnimationsModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
