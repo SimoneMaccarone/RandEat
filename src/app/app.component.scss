@@ -1,0 +1,31 @@
+
+.brand {
+  text-align: center;
+  font-size: 4rem;
+  color: whitesmoke;
+  margin-bottom: 30px;
+}
+
+//------------  Routing --------------------------
+.rout-btn{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-btn{
+
+  text-decoration: none;
+  text-align: center;
+  // min-width: max-content;
+  width: 175px;
+  padding: 10px;
+  margin: 13px;
+  margin-top: 20px;
+  background-color: #404041;
+  color: whitesmoke;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 4px;
+  align-self: center;
+}

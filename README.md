@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+--- TASK da fare ---
+
+- Fare condizione per le ricerche( se è vuoto, non fare nessuna chiamata)
+
+- Fixare estetica cards
+
+- Chiamata ingredienti da modificare l' API
+
+- Per fare la net page una chiamata al link della prossima pagina
+
+- Tipare la funzione di ricerca ingredienti

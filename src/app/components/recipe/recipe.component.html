@@ -1,14 +1,7 @@
 <form (submit)="onSubmit()">
   <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
-  <input type="text" placeholder="Search Your Recipe..." [(ngModel)]="searchQuery" name="searchQuery">
+  <input type="text" placeholder="Search your recipe..." [(ngModel)]="searchQuery" name="searchQuery"><mat-icon class="search-icon">search</mat-icon>
 </form>
-
-  <!-- <form (submit)="onSubmit()">
-    <mat-form-field class="full-with">
-      <mat-label>Search your recipe...</mat-label>
-      <input type="text" matInput placeholder="Pizza" [(ngModel)]="searchQuery" name="searchQuery">
-    </mat-form-field>
-  </form> -->
 
 <!-- ROUTING NAV -->
 <!-- <nav class="rout-btn">
@@ -16,9 +9,6 @@
   <a routerLink="/ingredient-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Ingredient Recipe</a>
   <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random Recipe</a>
 </nav> -->
-
-
-  <!-- <button class="view-btn" (click)="getNextPage()">Next Page </button> -->
 
 
 <div class="search-result">
@@ -42,9 +32,3 @@
 <button class="back-to-top-btn" (click)="scrollToTop()"  [class.hide]="showBackToTop" [class.show]="showBackToTop">
   <span>&uarr;</span>
 </button>
-
-
-
-<!-- NOTE -->
-<!-- per fare la net page una chiamata al link della prossima pagina-->
-<!-- tasto ritorna alla home in alto -->
