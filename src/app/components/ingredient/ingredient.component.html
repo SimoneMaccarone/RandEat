@@ -21,7 +21,7 @@
 <mat-form-field class="form">
   <mat-label>Your ingredients:</mat-label>
   <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
-    <mat-chip-row *ngFor="let fruit of ingredients"
+    <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits"
                   (removed)="remove(fruit)"
                   [editable]="true"
                   (edited)="edit(fruit, $event)"
@@ -37,8 +37,8 @@
            [matChipInputAddOnBlur]="addOnBlur"
            (matChipInputTokenEnd)="add($event)"/>
   </mat-chip-grid>
-  <button (submit)="searchRecipes(ingredients)"> CERCA</button>
 </mat-form-field>
+<button (click)="searchRecipes(ingredientsArrayFruits)"> CERCA</button>
 
 
 

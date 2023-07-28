@@ -28,15 +28,16 @@ export class IngredientComponent  {
   // material
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  announcer = inject(LiveAnnouncer);
   ingredientsArrayFruits: Fruit[] = [];
 
-  announcer = inject(LiveAnnouncer);
 
   constructor(private recipeService: RecipeService){ }
 
-  searchRecipes(ingredientsArrayFruits:Fruit[]):any {
+  searchRecipes(ingredientsArrayFruits:Fruit[]) {
     // const ingredientsArray = ingredients.split(',');
-    this.recipeService.searchRecipesByIngredients(ingredientsArrayFruits).subscribe(
+    const ingredients = ingredientsArrayFruits.map(fruit => fruit.name); // Estrai solo i nomi degli ingredienti
+    this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
       {
         next: recipes => this.recipes = recipes.hits,
         error: err => console.log('Errore nella ricerca Ingredienti', err)
