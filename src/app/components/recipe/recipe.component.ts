@@ -17,12 +17,15 @@ export class RecipeComponent {
 
   // SEARCH FOOD
   onSubmit() {
-    this.recipeService.searchRecipes(this.searchQuery).subscribe(
-      {
-        next: searchResults => this.searchResults = searchResults.hits,
-        error: err => console.log('Errore nella ricerca', err)
-      }
-    );
+    if (this.searchQuery !== '') {
+
+      this.recipeService.searchRecipes(this.searchQuery).subscribe(
+        {
+          next: searchResults => this.searchResults = searchResults.hits,
+          error: err => console.log('Errore nella ricerca', err)
+        }
+      );
+    }
   }
 
 

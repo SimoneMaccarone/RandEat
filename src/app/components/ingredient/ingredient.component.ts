@@ -1,9 +1,9 @@
 import { Component, HostListener, inject } from '@angular/core';
-import { IngredientsModel,Hit } from 'src/app/interfaces/ingredients-model';
+import { IngredientsModel, Hit } from 'src/app/interfaces/ingredients-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 //      MATERIAL and EXTRA
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
 
 
@@ -18,12 +18,8 @@ export interface Fruit {
   styleUrls: ['./ingredient.component.scss']
 })
 
-export class IngredientComponent  {
-  recipes: any[]=[];
-  // ingredients: string='';
-
-  showBackToTop = false;
-  scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
+export class IngredientComponent {
+  recipes: any[] = [];
 
   // material
   addOnBlur = true;
@@ -31,11 +27,12 @@ export class IngredientComponent  {
   announcer = inject(LiveAnnouncer);
   ingredientsArrayFruits: Fruit[] = [];
 
+  // Button return home
+  showBackToTop = false;
+  scrollOffsetToShowButton = 200;
+  constructor(private recipeService: RecipeService) { }
 
-  constructor(private recipeService: RecipeService){ }
-
-  searchRecipes(ingredientsArrayFruits:Fruit[]) {
-    // const ingredientsArray = ingredients.split(',');
+  searchRecipes(ingredientsArrayFruits: Fruit[]) {
     const ingredients = ingredientsArrayFruits.map(fruit => fruit.name); // Estrai solo i nomi degli ingredienti
     this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
       {
@@ -63,7 +60,7 @@ export class IngredientComponent  {
 
     // Add our fruit
     if (value) {
-      this.ingredientsArrayFruits.push({name: value});
+      this.ingredientsArrayFruits.push({ name: value });
     }
 
     // Clear the input value
