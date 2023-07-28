@@ -43,7 +43,7 @@ export class RecipeService {
 
   // INGREDIENTS RECIPE
   searchRecipesByIngredients(ingredients: any): Observable<any> {
-    const joinedIngredients = ingredients.join(',');
+    // const joinedIngredients = ingredients.join(',');
     const url=`${this.baseURL_INGR}?q=${ingredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
     return this.http.get<any>(url);
   }

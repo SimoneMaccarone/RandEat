@@ -37,22 +37,24 @@ input {
 }
 
 .search-icon{
+  margin: 0px;
   font-size: 20px;
 }
 
 .searchIngredients-btn{
-  margin: 5px;
-  border-radius: 100%;
+  display: flex;
+  border-radius: 4px;
   // width: 130px;
-  padding-top: 5px;
+  padding: 5px;
   text-decoration: none;
   text-align: center;
   min-width: max-content;
   background-color: #404041;
   color: whitesmoke;
   font-size: 1.4rem;
-  align-self: flex-end;
+  align-items: center;
 }
+
 .search-result {
   margin-top: 50px;
   display: grid;

@@ -36,8 +36,8 @@
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
            (matChipInputTokenEnd)="add($event)"/>
+           <button class="searchIngredients-btn" (click)="searchRecipes(ingredientsArrayFruits)">Search<mat-icon  class="search-icon searchIngredients-btn">search</mat-icon></button>
   </mat-chip-grid>
-  <button class="searchIngredients-btn" (click)="searchRecipes(ingredientsArrayFruits)"><mat-icon class="search-icon">search</mat-icon></button>
 </mat-form-field>
 
 
