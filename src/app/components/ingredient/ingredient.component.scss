@@ -16,41 +16,29 @@ img {
   line-height: 2rem;
 }
 
-form {
-  width: 90%;
-  max-width: 400px;
-  margin: 20px auto;
-  background-color: rgb(223, 223, 223);
-}
-
-.form {
-  width: 90%;
+mat-form-field {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   // max-width: 400px;
   margin: 20px auto;
-  background-color: rgb(223, 223, 223);
+  width: 800px;
+  // background-color: rgb(223, 223, 223);
 }
+
 input {
+  justify-content: end;
   width: 90%;
   padding: 10px;
   border-radius: 4px;
   border: none;
   outline: none;
   font-size: 2rem;
-  background-color: rgb(223, 223, 223);
-  display: inline-block;
-}
-.input {
-  width: 90%;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  font-size: 2rem;
-  background-color: rgb(223, 223, 223);
+  // background-color: rgb(223, 223, 223);
   display: inline-block;
 }
 
-form ion-icon {
+mat-form-field ion-icon {
   width: 8%;
   font-size: 3rem;
   margin-bottom: -8px;
@@ -58,12 +46,11 @@ form ion-icon {
   display: inline-block;
 }
 
-.form ion-icon {
-  width: 8%;
-  font-size: 3rem;
-  margin-bottom: -8px;
-  color: rgb(75, 75, 75);
-  display: inline-block;
+.searchIngredients-btn{
+  display: flex;
+  justify-content: end;
+  margin: 5px;
+  border-radius: 50px;
 }
 .search-result {
   margin-top: 50px;

@@ -1,7 +1,14 @@
 <form (submit)="onSubmit()">
-  <input type="text" placeholder="Search Your Recipe..." [(ngModel)]="searchQuery" name="searchQuery">
   <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
+  <input type="text" placeholder="Search Your Recipe..." [(ngModel)]="searchQuery" name="searchQuery">
 </form>
+
+  <!-- <form (submit)="onSubmit()">
+    <mat-form-field class="full-with">
+      <mat-label>Search your recipe...</mat-label>
+      <input type="text" matInput placeholder="Pizza" [(ngModel)]="searchQuery" name="searchQuery">
+    </mat-form-field>
+  </form> -->
 
 <!-- ROUTING NAV -->
 <!-- <nav class="rout-btn">
@@ -32,7 +39,7 @@
 </div>
 
 
-<button class="back-to-top-btn" (click)="scrollToTop()" [class.show]="showBackToTop">
+<button class="back-to-top-btn" (click)="scrollToTop()"  [class.hide]="showBackToTop" [class.show]="showBackToTop">
   <span>&uarr;</span>
 </button>
 

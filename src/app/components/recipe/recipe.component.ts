@@ -7,14 +7,13 @@ import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss']
 })
-export class RecipeComponent  {
+export class RecipeComponent {
   searchQuery: string = '';
   searchResults: Hit[] = [];
 
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
-
-  constructor(private recipeService: RecipeService) {  }
+  constructor(private recipeService: RecipeService) { }
 
   // SEARCH FOOD
   onSubmit() {
@@ -29,8 +28,6 @@ export class RecipeComponent  {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    // this.showBackToTop = (window.scrollY > 250); // Mostra il pulsante solo dopo uno scroll di 200px
-    // this.showBackToTop = (document.documentElement.scrollTop > 175);
     this.showBackToTop = (window.scrollY > this.scrollOffsetToShowButton);
   }
 
@@ -40,17 +37,7 @@ export class RecipeComponent  {
       left: 0,
       behavior: 'smooth'
     });
-
   }
 
-  //NEXT PAGE FOOD
-  // getNextPage() {
-  //   this.recipeService.searchRecipes(this.searchQuery).subscribe(
-  //     {
-  //       next: nextPage=> this.linkNextPage= nextPage._links.next.href,
-  //       error:err=> console.log('Errore nella next page',err)
-  //     }
-  //   )
-  // }
 }
 
