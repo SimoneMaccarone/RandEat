@@ -22,9 +22,14 @@ mat-form-field {
   width: 100%;
   max-width: 800px;
   margin: 20px auto;
+  position: relative;
+  margin-top: 60px;
   // background-color: rgb(223, 223, 223);
 }
 
+mat-label{
+  // font-size: 30px;
+}
 
 input {
   width: 100%;
@@ -44,13 +49,14 @@ input {
 .searchIngredients-btn{
   display: flex;
   border-radius: 4px;
+  border-color: none;
   // width: 130px;
   padding: 5px;
   text-decoration: none;
   text-align: center;
   min-width: max-content;
-  background-color: #404041;
-  color: whitesmoke;
+  // background-color: #404041;
+  // color: whitesmoke;
   font-size: 1.4rem;
   align-items: center;
 }

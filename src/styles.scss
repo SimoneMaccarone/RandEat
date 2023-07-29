@@ -110,6 +110,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 //--------------------------------
 // MATERIAL
 
-// .mat-mdc-form-field-focus-overlay{
+// .mat-mdc-form-field-focus-overlay{}
 
+// ::ng-deep mat-form-field{
+//   border-radius: 0px;
 // }
