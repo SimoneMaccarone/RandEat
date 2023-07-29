@@ -7,7 +7,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
 
 
-export interface Fruit {
+export interface IngredientiMaterial {
   name: string;
 }
 
@@ -25,15 +25,15 @@ export class IngredientComponent {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   announcer = inject(LiveAnnouncer);
-  ingredientsArrayFruits: Fruit[] = [];
+  ingredientsArrayFruits: IngredientiMaterial[] = [];
 
   // Button return home
   showBackToTop = false;
   scrollOffsetToShowButton = 200;
   constructor(private recipeService: RecipeService) { }
 
-  searchRecipes(ingredientsArrayFruits: Fruit[]) {
-    const ingredients = ingredientsArrayFruits.map(fruit => fruit.name); // Estrai solo i nomi degli ingredienti
+  searchRecipes(ingredientsArrayFruits: IngredientiMaterial[]) {
+    const ingredients = ingredientsArrayFruits.map(ingrediente => ingrediente.name); // Estrai solo i nomi degli ingredienti
     this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
       {
         next: recipes => this.recipes = recipes.hits,
@@ -67,7 +67,7 @@ export class IngredientComponent {
     event.chipInput!.clear();
   }
 
-  remove(fruit: Fruit): void {
+  remove(fruit: IngredientiMaterial): void {
     const index = this.ingredientsArrayFruits.indexOf(fruit);
 
     if (index >= 0) {
@@ -77,7 +77,7 @@ export class IngredientComponent {
     }
   }
 
-  edit(fruit: Fruit, event: MatChipEditedEvent) {
+  edit(fruit: IngredientiMaterial, event: MatChipEditedEvent) {
     const value = event.value.trim();
 
     // Remove fruit if it no longer has a name
