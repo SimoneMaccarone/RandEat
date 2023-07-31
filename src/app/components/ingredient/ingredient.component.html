@@ -17,28 +17,25 @@
   <input type="text" placeholder="Ingredients separated by commas..." [(ngModel)]="ingredients" name="searchQuery">
 </form> -->
 
-
-<mat-form-field class="form">
-  <mat-label>Your ingredients:</mat-label>
-  <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
-    <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits"
-                  (removed)="remove(fruit)"
-                  [editable]="true"
-                  (edited)="edit(fruit, $event)"
-                  [aria-description]="'press enter to edit ' + fruit.name">
-      {{fruit.name}}
-      <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
-        <mat-icon>cancel</mat-icon>
-      </button>
-    </mat-chip-row>
-    <input placeholder="Enter your ingredients..."
-           [matChipInputFor]="chipGrid"
-           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-           [matChipInputAddOnBlur]="addOnBlur"
-           (matChipInputTokenEnd)="add($event)"/>
-           <button class="searchIngredients-btn" (click)="searchRecipes(ingredientsArrayFruits)">Search<mat-icon  class="search-icon searchIngredients-btn">search</mat-icon></button>
-  </mat-chip-grid>
-</mat-form-field>
+<div class="container">
+  <mat-form-field class="form">
+    <mat-label>Your ingredients:</mat-label>
+    <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
+      <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits" (removed)="remove(fruit)" [editable]="true"
+        (edited)="edit(fruit, $event)" [aria-description]="'press enter to edit ' + fruit.name">
+        {{fruit.name}}
+        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+      <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)" />
+      <button class="searchIngredients-btn" (click)="searchRecipes(ingredientsArrayFruits)">Search<mat-icon
+          class="search-icon searchIngredients-btn">search</mat-icon></button>
+    </mat-chip-grid>
+  </mat-form-field>
+</div>
 
 
 
@@ -63,4 +60,3 @@
 <button class="back-to-top-btn" (click)="scrollToTop()" [class.show]="showBackToTop">
   <span>&uarr;</span>
 </button>
-

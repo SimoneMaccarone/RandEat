@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
 
-// html,
-// body,
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
-
 * {
   padding: 0;
   margin: 0;
@@ -14,9 +7,11 @@
   // border: solid 1px green;
 }
 
-html {
+html,body {
   font-family: "Nunito";
   font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 //------------------------------------------------
