@@ -24,7 +24,7 @@ export class RecipeService {
 
   APP_ID_INGR: string = 'eeaee5a6'
   APP_KEY_INGR: string = 'a95083252ece72edbfc4f7aeb9dc6a33'
-  baseURL_INGR : string= 'https://api.edamam.com/search'
+  baseURL_INGR : string= 'https://api.edamam.com/api/recipes/v2'
 
 
   // RANDOM RECIPE API
@@ -44,7 +44,7 @@ export class RecipeService {
   // INGREDIENTS RECIPE
   searchRecipesByIngredients(ingredients: any): Observable<any> {
     // const joinedIngredients = ingredients.join(',');
-    const url=`${this.baseURL_INGR}?q=${ingredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
+    const url=`${this.baseURL_INGR}?type=public&q=${ingredients}&app_id=${this.APP_ID_INGR}&app_key=${this.APP_KEY_INGR}`;
     return this.http.get<any>(url);
   }
 
