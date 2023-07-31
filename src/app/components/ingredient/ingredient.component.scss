@@ -16,11 +16,13 @@ mat-form-field {
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
   height: 84px;
+  font-weight: 500;
+
 }
 
-// mat-label{
-//   // font-size: 30px;
-// }
+mat-label{
+  font-weight: 500;
+}
 
 input {
   width: 100%;
@@ -29,24 +31,25 @@ input {
   outline: none;
   font-size: 2rem;
   display: inline-block;
+
 }
 
 .search-icon{
   margin: 0px;
-  font-size: 20px;
+  padding: 0px;
 }
 
 .searchIngredients-btn{
   display: flex;
   border-radius: 4px;
   border-color: none;
-  padding: 5px;
+  padding: 2px;
+  margin: 0px;
   text-decoration: none;
   text-align: center;
   min-width: max-content;
-  // background-color: #404041;
-  // color: whitesmoke;
-  font-size: 1.4rem;
+  color: rgb(75, 75, 75);
+  font-size: 2rem;
   align-items: center;
 }
 
