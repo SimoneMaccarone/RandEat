@@ -32,27 +32,57 @@ export class IngredientComponent {
   scrollOffsetToShowButton = 200;
   constructor(private recipeService: RecipeService) { }
 
-  searchRecipes(ingredientsArrayFruits: IngredientiMaterial[]) {
-    const ingredients = ingredientsArrayFruits.map(ingrediente => ingrediente.name); // Estrai solo i nomi degli ingredienti
-    this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
-      {
-        next: recipes => this.recipes = recipes.hits,
-        error: err => console.log('Errore nella ricerca Ingredienti', err)
-      }
-    );
-  }
+  // searchRecipes(ingredientsArrayFruits: IngredientiMaterial[]) {
+  //   const ingredients = ingredientsArrayFruits.map(ingrediente => ingrediente.name); // Estrai solo i nomi degli ingredienti
+  //   this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
+  //     {
+  //       next: recipes => this.recipes = recipes.hits,
+  //       error: err => console.log('Errore nella ricerca Ingredienti', err)
+  //     }
+  //   );
+  // }
 
   // filterRecipesByIngredients(recipes: any[], ingredients: string[]): any[] {
   //   // Confronta gli ingredienti di ciascuna ricetta con l'elenco degli ingredienti cercati
   //   return recipes.filter(recipe => this.containsAllIngredients(recipe.recipe.ingredientLines, ingredients));
   // }
+  //🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅
+  searchRecipes() {
+    if (this.ingredientsArrayFruits.length === 0) {
+      // Se non ci sono ingredienti specificati, non fare la ricerca
+      this.recipes = [];
+      return;
+    }
 
-  // containsAllIngredients(ingredientLines: string[], ingredients: string[]): boolean {
-  //   // Verifica se tutti gli ingredienti cercati sono presenti nelle righe degli ingredienti della ricetta
-  //   const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase().trim());
-  //   const lowerCaseIngredientLines = ingredientLines.map(line => line.toLowerCase());
-  //   return lowerCaseIngredients.every(ingredient => lowerCaseIngredientLines.some(line => line.includes(ingredient)));
-  // }
+    const ingredients = this.ingredientsArrayFruits.map(ingrediente => ingrediente.name); // Estrai solo i nomi degli ingredienti
+    this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
+      (response: any) => {
+        if (response?.hits && Array.isArray(response.hits)) {
+          // Filtra solo le ricette che contengono tutti gli ingredienti specificati
+          this.recipes = response.hits.filter((recipe: { recipe: { ingredientLines: string[]; }; }) => this.containsAllIngredients(recipe.recipe.ingredientLines, ingredients));
+        } else {
+          // Nel caso in cui la risposta dell'API sia diversa da quanto previsto
+          this.recipes = [];
+          console.error('Risposta API imprevista:', response);
+        }
+      },
+      error => {
+        console.log('Errore nella ricerca Ingredienti', error);
+        this.recipes = [];
+      }
+    );
+  }
+
+  // Resto del codice...
+
+  containsAllIngredients(ingredientLines: string[], ingredients: string[]): boolean {
+    // Verifica se tutti gli ingredienti cercati sono presenti nelle righe degli ingredienti della ricetta
+    const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase().trim());
+    const lowerCaseIngredientLines = ingredientLines.map(line => line.toLowerCase());
+    return lowerCaseIngredients.every(ingredient => lowerCaseIngredientLines.some(line => line.includes(ingredient)));
+  }
+
+
   //🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅
 
   add(event: MatChipInputEvent): void {
