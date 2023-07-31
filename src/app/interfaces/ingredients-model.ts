@@ -1,20 +1,30 @@
 export interface IngredientsModel {
-  q: string
   from: number
   to: number
-  more: boolean
   count: number
+  _links: Links
   hits: Hit[]
+}
+
+export interface Links {
+  next: Next
+}
+
+export interface Next {
+  href: string
+  title: string
 }
 
 export interface Hit {
   recipe: Recipe
+  _links: Links2
 }
 
 export interface Recipe {
   uri: string
   label: string
   image: string
+  images: Images
   source: string
   url: string
   shareAs: string
@@ -25,6 +35,8 @@ export interface Recipe {
   ingredientLines: string[]
   ingredients: Ingredient[]
   calories: number
+  totalCO2Emissions: number
+  co2EmissionsClass: string
   totalWeight: number
   totalTime: number
   cuisineType: string[]
@@ -35,6 +47,37 @@ export interface Recipe {
   digest: Digest[]
 }
 
+export interface Images {
+  THUMBNAIL: Thumbnail
+  SMALL: Small
+  REGULAR: Regular
+  LARGE?: Large
+}
+
+export interface Thumbnail {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Small {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Regular {
+  url: string
+  width: number
+  height: number
+}
+
+export interface Large {
+  url: string
+  width: number
+  height: number
+}
+
 export interface Ingredient {
   text: string
   quantity: number
@@ -43,7 +86,7 @@ export interface Ingredient {
   weight: number
   foodCategory: string
   foodId: string
-  image: string
+  image?: string
 }
 
 export interface TotalNutrients {
@@ -477,4 +520,13 @@ export interface Sub {
   hasRDI: boolean
   daily: number
   unit: string
+}
+
+export interface Links2 {
+  self: Self
+}
+
+export interface Self {
+  href: string
+  title: string
 }

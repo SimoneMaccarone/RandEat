@@ -1,8 +1,4 @@
 
-// .spacer{
-  // margin: 30px;ks
-// }
-
 .container{
   display: flex;
   justify-content: center;
@@ -14,13 +10,9 @@
 mat-form-field {
   position: relative;
   display: flex;
-  // align-content: center;
-  // justify-content: center;
   align-self: center;
   width: 100%;
   max-width: 800px;
-  // margin: 20px auto;
-  // margin-top: 60px;
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
 }
@@ -47,7 +39,6 @@ input {
   display: flex;
   border-radius: 4px;
   border-color: none;
-  // width: 130px;
   padding: 5px;
   text-decoration: none;
   text-align: center;
