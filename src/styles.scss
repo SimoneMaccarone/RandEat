@@ -5,13 +5,16 @@
   margin: 0;
   box-sizing: border-box;
   // border: solid 1px green;
+  // font-family: "Nunito";
 }
 
-html,body {
+html,
+body {
   font-family: "Nunito";
   font-size: 12px;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 //------------------------------------------------
@@ -68,12 +71,14 @@ section {
   font-size: 3rem;
 }
 
-app-ingredient{
+app-ingredient {
   max-height: max-content;
 }
-.ng-star-inserted{
+
+.ng-star-inserted {
   max-height: max-content;
 }
+
 //-------------------------------------------------------
 
 @media (max-width: 768px) {
@@ -95,18 +100,21 @@ app-ingredient{
   }
 }
 
+//-------------------------------------------------------
+//        MATERIAL
 
+// .mdc-text-field:not(.mdc-text-field--disabled)
+//  .mdc-floating-label {
+//   color: var(--mdc-theme-primary, #d8b000);;
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-//--------------------------------
-// MATERIAL
-
-// .mat-mdc-form-field-focus-overlay{}
-
-// ::ng-deep mat-form-field{
-//   border-radius: 0px;
 // }
+
+// .mdc-text-field--filled .mdc-line-ripple::after {
+//   // border-bottom-color: var(--mdc-theme-primary, #ffffff99);
+//   border-bottom-color: var(--mdc-theme-primary, #d8b000);
+// }
+.mdc-text-field {
+  // background-color: rgba(#69f0ae, 1) !important;
+  background-color: rgba(rgba(223, 223, 223, 1), 0) !important;
+  // font-family: 'Fredoka One', cursive;
+}
