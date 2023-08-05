@@ -1,0 +1,23 @@
+//------------  Routing --------------------------
+.rout-btn{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-btn{
+
+  text-decoration: none;
+  text-align: center;
+  // min-width: max-content;
+  width: 175px;
+  padding: 10px;
+  margin: 0px 13px 30px 13px;
+  // margin-top: 20px;
+  background-color: #404041;
+  color: whitesmoke;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 4px;
+  align-self: center;
+}

@@ -3,17 +3,11 @@
   <input type="text" placeholder="Search your recipe..." [(ngModel)]="searchQuery" name="searchQuery"><mat-icon class="search-icon">search</mat-icon>
 </form>
 
-<!-- ROUTING NAV -->
-<!-- <nav class="rout-btn">
-  <a routerLink="/search-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Search Recipe</a>
-  <a routerLink="/ingredient-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Ingredient Recipe</a>
-  <a routerLink="/random-recipe" routerLinkActive="active" ariaCurrentWhenActive="page" class="view-btn nav-btn">Random Recipe</a>
-</nav> -->
-
+<app-navbar *ngIf="searchResults.length > 0"></app-navbar>
 
 <div class="search-result">
   <div *ngFor="let hit of searchResults" class="item">
-    <img [src]="hit.recipe.image" alt="">
+    <img [src]="hit.recipe.image">
 
     <div class="pad">
       <div class="flex-container">
@@ -33,7 +27,12 @@
   </div>
 </div>
 
+<span *ngIf="searchResults.length >0" class="spacer"></span>
+
 
 <button class="back-to-top-btn" (click)="scrollToTop()"  [class.hide]="showBackToTop" [class.show]="showBackToTop">
   <span>&uarr;</span>
 </button>
+
+
+
