@@ -35,7 +35,7 @@ img {
 .item {
   width: 100%;
   border-radius: 8px;
-  background-color: rgb(37, 37, 37);
+  background-color: rgba(37, 37, 37, 0.7);
   // padding: 15px;
   overflow: hidden;
 }
@@ -53,9 +53,16 @@ img {
 
 .flex-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 15px;
+}
+
+.view-btn{
+  display: flex;
+  justify-content: end;
+  align-self: flex-end;
 }
 
 .search-result .title {
