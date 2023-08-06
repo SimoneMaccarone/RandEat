@@ -6,18 +6,20 @@
 }
 
 .nav-btn{
-
   text-decoration: none;
   text-align: center;
   // min-width: max-content;
   width: 175px;
   padding: 10px;
-  margin: 0px 13px 30px 13px;
-  // margin-top: 20px;
-  background-color: #404041;
+  margin: -10px 13px 30px 13px;
+  background-color: rgba(64, 64, 65, 0.5);
   color: whitesmoke;
   font-size: 1.4rem;
   font-weight: 500;
   border-radius: 4px;
   align-self: center;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 0, 0.7);
 }
