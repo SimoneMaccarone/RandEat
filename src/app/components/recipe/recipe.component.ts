@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Hit } from 'src/app/interfaces/recipe-model';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 
@@ -11,8 +11,6 @@ export class RecipeComponent {
   searchQuery: string = '';
   searchResults: Hit[] = [];
 
-  showBackToTop = false;
-  scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
   constructor(private recipeService: RecipeService) { }
 
   // SEARCH FOOD
@@ -26,20 +24,6 @@ export class RecipeComponent {
         }
       );
     }
-  }
-
-
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    this.showBackToTop = (window.scrollY > this.scrollOffsetToShowButton);
-  }
-
-  scrollToTop(): void {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
   }
 
 }

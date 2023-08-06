@@ -1,5 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
-import { IngredientsModel, Hit } from 'src/app/interfaces/ingredients-model';
+import { Component, inject } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipeServ/recipe.service';
 //      MATERIAL and EXTRA
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
@@ -27,25 +26,8 @@ export class IngredientComponent {
   announcer = inject(LiveAnnouncer);
   ingredientsArrayFruits: IngredientiMaterial[] = [];
 
-  // Button return home
-  showBackToTop = false;
-  scrollOffsetToShowButton = 200;
   constructor(private recipeService: RecipeService) { }
 
-  // searchRecipes(ingredientsArrayFruits: IngredientiMaterial[]) {
-  //   const ingredients = ingredientsArrayFruits.map(ingrediente => ingrediente.name); // Estrai solo i nomi degli ingredienti
-  //   this.recipeService.searchRecipesByIngredients(ingredients).subscribe(
-  //     {
-  //       next: recipes => this.recipes = recipes.hits,
-  //       error: err => console.log('Errore nella ricerca Ingredienti', err)
-  //     }
-  //   );
-  // }
-
-  // filterRecipesByIngredients(recipes: any[], ingredients: string[]): any[] {
-  //   // Confronta gli ingredienti di ciascuna ricetta con l'elenco degli ingredienti cercati
-  //   return recipes.filter(recipe => this.containsAllIngredients(recipe.recipe.ingredientLines, ingredients));
-  // }
   //🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅
   searchRecipes() {
     if (this.ingredientsArrayFruits.length === 0) {
@@ -123,22 +105,5 @@ export class IngredientComponent {
     }
   }
 
-
-
-
-  //------------------------------------------------------------------------
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    this.showBackToTop = (window.scrollY > this.scrollOffsetToShowButton);
-  }
-
-  scrollToTop(): void {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-
-  }
 
 }

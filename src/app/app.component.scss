@@ -6,26 +6,36 @@
   // margin-bottom: 30px;
 }
 
-// //------------  Routing --------------------------
-// .rout-btn{
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// }
+//-----------  RETURN HOME  -------------------
 
-// .nav-btn{
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #404041; //#2d572c ;
+  color: #fff;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 999;
+}
 
-//   text-decoration: none;
-//   text-align: center;
-//   // min-width: max-content;
-//   width: 175px;
-//   padding: 10px;
-//   margin: 13px;
-//   margin-top: 20px;
-//   background-color: #404041;
-//   color: whitesmoke;
-//   font-size: 1.4rem;
-//   font-weight: 500;
-//   border-radius: 4px;
-//   align-self: center;
-// }
+.back-to-top-btn.show {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
