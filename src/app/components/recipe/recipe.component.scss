@@ -90,11 +90,12 @@ img {
 
 .item-data {
   color: whitesmoke;
-  display: block;
+  display: flex;
   margin-top: 10px;
   font-size: 1.4rem;
   letter-spacing: 0.05rem;
   line-height: 2rem;
+  align-items: center;
 }
 
 
