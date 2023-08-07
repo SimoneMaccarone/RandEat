@@ -13,7 +13,24 @@ export class AppComponent {
   showBackToTop = false;
   scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
+  // CAMBIO DI SFONDO
+  currentBackgroundIndex = 1;
+  totalBackgrounds = 5; // Cambia questo numero in base al numero di sfondi
+
   constructor(){}
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.toggleBackground();
+    }, 120000); // Esegui la funzione ogni 10 minuti (600000 millisecondi)
+  }
+  toggleBackground(): void {
+    const body = document.querySelector('body') as HTMLElement;
+    body.classList.remove(`change${this.currentBackgroundIndex}`);
+    this.currentBackgroundIndex = (this.currentBackgroundIndex % this.totalBackgrounds) + 1;
+    body.classList.add(`change${this.currentBackgroundIndex}`);
+  }
+
 
 
   @HostListener('window:scroll', [])
@@ -28,5 +45,17 @@ export class AppComponent {
         behavior: 'smooth'
       });
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

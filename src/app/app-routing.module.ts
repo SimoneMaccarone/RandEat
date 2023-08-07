@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'search-recipe', component: RecipeComponent },
   { path: 'random-recipe', component: RandomComponent },
   { path: 'ingredient-recipe', component: IngredientComponent },
-  { path: '',   redirectTo: '/search-recipe', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '', component: RecipeComponent },
   { path: '**', component: RecipeComponent },// wrong search
 ];
 

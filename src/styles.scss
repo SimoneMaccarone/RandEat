@@ -16,6 +16,49 @@ body {
   padding: 0;
   height: 100%;
 }
+//--------------- CAMBIO SFONDO --------------------
+
+@keyframes changeBackground {
+  0%, 100% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+.change1 section {
+  background-image: url(./assets/wallpaper/3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
+.change2 section {
+  background-image: url(./assets/wallpaper/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
+.change3 section {
+  background-image: url(./assets/wallpaper/4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
+.change4 section {
+  background-image: url(./assets/wallpaper/5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
 
 //------------------------------------------------
 
