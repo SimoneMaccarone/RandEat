@@ -5,11 +5,11 @@ import { RandomComponent } from './components/random/random.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 
 const routes: Routes = [
-  { path: 'search-recipe', component: RecipeComponent },
-  { path: 'random-recipe', component: RandomComponent },
-  { path: 'ingredient-recipe', component: IngredientComponent },
-  { path: '', component: RecipeComponent },
-  { path: '**', component: RecipeComponent },// wrong search
+  { path: 'search', component: RecipeComponent },
+  { path: 'ingredient', component: IngredientComponent },
+  { path: 'random', component: RandomComponent },
+  // { path: '', component: RecipeComponent },
+  // { path: '**', component: RecipeComponent },// wrong search
 ];
 
 @NgModule({

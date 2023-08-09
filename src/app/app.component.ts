@@ -15,7 +15,7 @@ export class AppComponent {
 
   // CAMBIO DI SFONDO
   currentBackgroundIndex = 1;
-  totalBackgrounds = 5; // Cambia questo numero in base al numero di sfondi
+  totalBackgrounds = 4; // Cambia questo numero in base al numero di sfondi
 
   constructor(){}
 

@@ -15,6 +15,13 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+
+  background-image: url(./assets/wallpaper/3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeQuality;
 }
 //--------------- CAMBIO SFONDO --------------------
 
@@ -27,23 +34,15 @@ body {
   }
 }
 
-.change1 section {
-  background-image: url(./assets/wallpaper/3.jpg);
+.change1 body {
+  background-image: url(./assets/wallpaper/2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   image-rendering: optimizeQuality;
 }
-.change2 section {
-  background-image: url(./assets/wallpaper/1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  image-rendering: optimizeQuality;
-}
-.change3 section {
+.change2 body {
   background-image: url(./assets/wallpaper/4.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -51,14 +50,15 @@ body {
   background-size: cover;
   image-rendering: optimizeQuality;
 }
-.change4 section {
-  background-image: url(./assets/wallpaper/5.jpg);
+.change3 body {
+  background-image: url(./assets/wallpaper/1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   image-rendering: optimizeQuality;
 }
+//----------------   NAV-BAR  -----------------
 
 //------------------------------------------------
 
@@ -69,12 +69,12 @@ section {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-image: url(./assets/wallpaper/2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  image-rendering: optimizeQuality;
+  // background-image: url(./assets/wallpaper/2.jpg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
+  // image-rendering: optimizeQuality;
 }
 
 .container {
