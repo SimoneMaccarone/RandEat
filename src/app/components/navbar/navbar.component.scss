@@ -6,9 +6,9 @@
 }
 
 .nav-btn{
-  text-decoration: none;
+  // text-decoration: none;
   text-align: center;
-  // min-width: max-content;
+  min-width: max-content;
   width: 175px;
   padding: 10px;
   margin: 0px 13px 30px 13px;
@@ -19,8 +19,10 @@
   border-radius: 4px;
   align-self: center;
   // background-color: transparentize($color: #ff5e0000, $amount: 0);
-
 }
-// .nav-btn:hover {
-//   background-color: rgba(255, 255, 0, 0.7);
-// }
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+
+
