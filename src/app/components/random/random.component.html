@@ -11,15 +11,14 @@
         <div class="flex-container">
 
           <h1 class="title">{{ rand.strMeal }}</h1>
-          <a class="view-btn" target="_blank" [href]="rand.strSource">View Recipe</a>
 
         </div>
-<!--
-        <details class="item-data">
-          <summary>Ather info...</summary>
+
+        <div class="item-data">
           <p>Country: {{rand.strArea}}</p>
           <p>Category: {{rand.strCategory}}</p>
-        </details> -->
+        </div>
+        <a class="view-btn flex-container" target="_blank" [href]="rand.strSource">View Recipe</a>
 
       </div>
     </div>
