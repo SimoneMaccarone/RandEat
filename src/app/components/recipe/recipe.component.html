@@ -15,7 +15,7 @@
         <a class="view-btn" target="_blank" [href]="hit.recipe.url">View Recipe</a>
       </div>
 
-      <p class="item-data"><span class="material-symbols-outlined">timer</span>Time: {{hit.recipe.totalTime}}</p>
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0" ><span class="material-symbols-outlined">timer</span>Time: {{hit.recipe.totalTime}}</p>
       <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{ hit.recipe.calories.toFixed(0) }}</p>
       <p class="item-data">Diet label: {{ hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
 
