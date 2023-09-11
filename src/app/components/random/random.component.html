@@ -19,13 +19,9 @@
           <p>Country: {{rand.strArea}}</p>
           <!-- <p>Drink alternateve: {{rand.strDrinkAlternate}}</p> -->
 
-          <details>
-            <summary>Instructions</summary>
-            <p>{{rand.strInstructions}}</p>
-          </details>
-
-          <details>
+          <details class="Ingredients">
             <summary>Ingredients</summary>
+            <div class="ingredients-list">
             <li *ngIf="rand.strIngredient1 && rand.strMeasure1">{{rand.strIngredient1}} {{rand.strMeasure1}} </li>
             <li *ngIf="rand.strIngredient2 && rand.strMeasure2">{{rand.strIngredient2}} {{rand.strMeasure2}} </li>
             <li *ngIf="rand.strIngredient3 && rand.strMeasure3">{{rand.strIngredient3}} {{rand.strMeasure3}} </li>
@@ -35,7 +31,7 @@
             <li *ngIf="rand.strIngredient7 && rand.strMeasure7">{{rand.strIngredient7}} {{rand.strMeasure7}} </li>
             <li *ngIf="rand.strIngredient8 && rand.strMeasure8">{{rand.strIngredient8}} {{rand.strMeasure8}} </li>
             <li *ngIf="rand.strIngredient9 && rand.strMeasure9">{{rand.strIngredient9}} {{rand.strMeasure9}} </li>
-            <li *ngIf="rand.strIngredient10 && rand.strMeasure10">{{rand.strIngredient10}} {{rand.strMeasure10}}</li>
+            <li *ngIf="rand.strIngredient10 && rand.strMeasure10">{{rand.strIngredient10}} {{rand.strMeasure10}} </li>
             <li *ngIf="rand.strIngredient11 && rand.strMeasure11">{{rand.strIngredient11}} {{rand.strMeasure11}} </li>
             <li *ngIf="rand.strIngredient12 && rand.strMeasure12">{{rand.strIngredient12}} {{rand.strMeasure12}} </li>
             <li *ngIf="rand.strIngredient13 && rand.strMeasure13">{{rand.strIngredient13}} {{rand.strMeasure13}} </li>
@@ -46,15 +42,16 @@
             <li *ngIf="rand.strIngredient18 && rand.strMeasure18">{{rand.strIngredient18}} {{rand.strMeasure18}} </li>
             <li *ngIf="rand.strIngredient19 && rand.strMeasure19">{{rand.strIngredient19}} {{rand.strMeasure19}} </li>
             <li *ngIf="rand.strIngredient20 && rand.strMeasure20">{{rand.strIngredient20}} {{rand.strMeasure20}} </li>
+          </div>
           </details>
 
 
+          <details>
+            <summary>Instructions</summary>
+            <p class="ingredients-list">{{rand.strInstructions}}</p>
+          </details>
 
         </div>
-
-
-
-
 
         <a class="view-btn flex-container" target="_blank" [href]="rand.strSource">View Recipe</a>
 

@@ -89,9 +89,17 @@ img {
   margin: 30px;
 }
 
-details>summary {
-  // list-style: none;
+.ingredients{
+  margin: 10px;
 }
+
+.ingredients-list{
+  margin: 20px;
+}
+
+// details>summary {
+  // list-style: none;
+// }
 
 details>summary::-webkit-details-marker {
   display: none;
