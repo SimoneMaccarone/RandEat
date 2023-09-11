@@ -97,9 +97,9 @@ img {
   margin: 20px;
 }
 
-// details>summary {
-  // list-style: none;
-// }
+details>summary {
+  list-style: none;
+}
 
 details>summary::-webkit-details-marker {
   display: none;

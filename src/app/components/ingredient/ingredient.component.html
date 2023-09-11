@@ -43,6 +43,29 @@
 
 
 <div class="search-result">
+  <div *ngFor="let hit of recipes" class="item">
+    <img [src]="hit.recipe.image">
+
+    <div class="pad">
+      <div class="flex-container">
+        <h1 class="title">{{ hit.recipe.label }}</h1>
+        <a class="view-btn" target="_blank" [href]="hit.recipe.url">View Recipe</a>
+      </div>
+
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0" ><span class="material-symbols-outlined">timer</span>Time: {{hit.recipe.totalTime}} min</p>
+      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{ hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
+      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{ hit.recipe.calories.toFixed(0) }} kcal</p>
+
+      <details class="item-data health-labels">
+        <summary><span class="material-symbols-outlined">psychiatry</span>Health labels...</summary>
+        <p class="labels-health">{{ hit.recipe.healthLabels }}</p>
+      </details>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="search-result">
   <div *ngFor="let result of recipes" class="item">
     <img [src]="result.recipe.image">
 
@@ -54,10 +77,9 @@
 
       <p class="item-data">Calories: {{ result.recipe.calories.toFixed(2) }}</p>
       <p class="item-data">Diet label: {{ result.recipe.dietLabels.length>0?result.recipe.dietLabels:'NoDataFound'}}</p>
-      <!-- <p class="item-data">Health labels: <br> {{ result.recipe.healthLabels }}</p> -->
     </div>
   </div>
-</div>
+</div> -->
 
 <span *ngIf="recipes.length> 0" class="spacer"></span>
 

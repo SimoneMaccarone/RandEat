@@ -1,6 +1,7 @@
 <form (submit)="onSubmit()">
   <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
-  <input type="text" placeholder="Search your recipe..." [(ngModel)]="searchQuery" name="searchQuery"><mat-icon class="search-icon">search</mat-icon>
+  <input type="text" placeholder="Search your recipe..." [(ngModel)]="searchQuery" name="searchQuery"><mat-icon
+    class="search-icon">search</mat-icon>
 </form>
 
 <app-navbar *ngIf="searchResults.length > 0"></app-navbar>
@@ -15,20 +16,20 @@
         <a class="view-btn" target="_blank" [href]="hit.recipe.url">View Recipe</a>
       </div>
 
-      <p class="item-data" *ngIf="hit.recipe.totalTime > 0" ><span class="material-symbols-outlined">timer</span>Time: {{hit.recipe.totalTime}}</p>
-      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{ hit.recipe.calories.toFixed(0) }}</p>
-      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{ hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
+      <!-- <p> {{hit.recipe.}} </p> -->
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>Time:
+        {{hit.recipe.totalTime}} min</p>
+      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{
+        hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'Undefined'}}</p>
+      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{
+        hit.recipe.calories.toFixed(0) }} kcal</p>
 
-      <details class="item-data">
-        <summary>Health labels</summary>
-        <p>{{ hit.recipe.healthLabels }}</p>
+      <details class="item-data health-labels">
+        <summary><span class="material-symbols-outlined">psychiatry</span>Health labels...</summary>
+        <p class="labels-health">{{ hit.recipe.healthLabels }}</p>
       </details>
     </div>
   </div>
 </div>
 
 <span *ngIf="searchResults.length >0" class="spacer"></span>
-
-
-
-
