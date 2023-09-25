@@ -10,6 +10,7 @@
 
 html,
 body {
+  height: 100vh;
   font-family: "Nunito";
   font-size: 12px;
   margin: 0;
@@ -18,7 +19,7 @@ body {
   // text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
   background: url(./assets/wallpaper/3.jpg);
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
