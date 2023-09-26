@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatButtonModule} from '@angular/material/button';
+import { ReturnHomeBtnComponent } from './functions/return-home-btn/return-home-btn.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {MatButtonModule} from '@angular/material/button';
     RandomComponent,
     IngredientComponent,
     NavbarComponent,
+    ReturnHomeBtnComponent,
   ],
   imports: [
     BrowserModule,

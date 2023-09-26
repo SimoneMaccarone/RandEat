@@ -33,6 +33,7 @@ input {
   background-color: rgb(223, 223, 223);
 }
 
+//---------SEARCH BUTTON---------
 .search-icon{
   margin: 0px;
   padding: 0px;
@@ -51,10 +52,10 @@ input {
   font-size: 2rem;
   align-items: center;
   background-color: rgb(223, 223, 223);
+  cursor: pointer;
 }
-//-----------------------------------
 
-//-----------------------------------
+//-----------RISULTATO RICERCA-----------
 
 .search-result {
   // margin-top: 50px;
