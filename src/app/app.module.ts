@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ReturnHomeBtnComponent } from './functions/return-home-btn/return-home-btn.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ReturnHomeBtnComponent } from './functions/return-home-btn/return-home-
     IngredientComponent,
     NavbarComponent,
     ReturnHomeBtnComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
