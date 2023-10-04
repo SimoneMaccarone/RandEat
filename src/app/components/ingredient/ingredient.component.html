@@ -18,21 +18,25 @@
 </form> -->
 
 <div class="container">
-  <mat-form-field class="form">
+  <mat-form-field class="form" > <!--appearance="outline"-->
+
     <mat-label>Your ingredients:</mat-label>
+
     <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
+
       <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits" (removed)="remove(fruit)" [editable]="true"
         (edited)="edit(fruit, $event)" [aria-description]="'press enter to edit ' + fruit.name">
         {{fruit.name}}
-        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
-          <mat-icon>cancel</mat-icon>
-        </button>
+        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name"><mat-icon>cancel</mat-icon></button>
       </mat-chip-row>
+
       <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
         (matChipInputTokenEnd)="add($event)" />
-      <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon class="search-icon searchIngredients-btn">search</mat-icon></button>
+      <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
+          class="search-icon searchIngredients-btn">search</mat-icon></button>
     </mat-chip-grid>
+
   </mat-form-field>
 </div>
 
@@ -51,9 +55,12 @@
         <a class="view-btn" target="_blank" [href]="hit.recipe.url">View Recipe</a>
       </div>
 
-      <p class="item-data" *ngIf="hit.recipe.totalTime > 0" ><span class="material-symbols-outlined">timer</span>Time: {{hit.recipe.totalTime}} min</p>
-      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{ hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
-      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{ hit.recipe.calories.toFixed(0) }} kcal</p>
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>Time:
+        {{hit.recipe.totalTime}} min</p>
+      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{
+        hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
+      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{
+        hit.recipe.calories.toFixed(0) }} kcal</p>
 
       <details class="item-data health-labels">
         <summary><span class="material-symbols-outlined">psychiatry</span>Health labels...</summary>
@@ -64,4 +71,3 @@
 </div>
 
 <span *ngIf="recipes.length> 0" class="spacer"></span>
-

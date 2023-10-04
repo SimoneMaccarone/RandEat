@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener } from "@angular/core";
+
 
 @Component({
   selector: 'app-return-home-btn',
@@ -8,7 +9,7 @@ import { Component, HostListener } from '@angular/core';
 export class ReturnHomeBtnComponent {
 
     // RETURN HOME BUTTON
-    showBackToTop = true ;
+    showBackToTop = false ;
     scrollOffsetToShowButton = 200; // Imposta l'offset di scorrimento per mostrare il bottone
 
     constructor(){}

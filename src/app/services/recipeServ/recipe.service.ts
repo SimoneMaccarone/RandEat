@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, switchMap } from 'rxjs';
-import { IngredientsModel } from 'src/app/interfaces/ingredients-model';
+import { Observable, switchMap } from 'rxjs';
 import { RandomRecipeModel } from 'src/app/interfaces/random-model';
 import { RecipeModel } from 'src/app/interfaces/recipe-model';
 @Injectable({
