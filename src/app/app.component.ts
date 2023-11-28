@@ -19,11 +19,17 @@ export class AppComponent {
 
   constructor(){}
 
-  // ngOnInit(): void {
+  ngOnInit(): void {
   //   setInterval(() => {
   //     this.toggleBackground();
   //   }, 120000); // Esegui la funzione ogni 10 minuti (600000 millisecondi)
-  // }
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+  }
+
 
   // toggleBackground(): void {
   //   const body = document.querySelector('body') as HTMLElement;

@@ -33,11 +33,11 @@
       <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
         (matChipInputTokenEnd)="add($event)" />
-      <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
-          class="search-icon searchIngredients-btn">search</mat-icon></button>
-    </mat-chip-grid>
+      </mat-chip-grid>
 
-  </mat-form-field>
+    </mat-form-field>
+    <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
+        class="search-icon searchIngredients-btn">search</mat-icon></button>
 </div>
 
 
