@@ -24,27 +24,32 @@
 
     <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
 
-      <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits" (removed)="remove(fruit)" [editable]="true"
-        (edited)="edit(fruit, $event)" [aria-description]="'press enter to edit ' + fruit.name">
+      <!-- CHIPS -->
+      <mat-chip-row *ngFor="let fruit of ingredientsArrayFruits"
+      (removed)="remove(fruit)" [editable]="true"
+      (edited)="edit(fruit, $event)"
+      [aria-description]="'press enter to edit ' + fruit.name">
         {{fruit.name}}
         <button matChipRemove [attr.aria-label]="'remove ' + fruit.name"><mat-icon>cancel</mat-icon></button>
       </mat-chip-row>
 
+      <!--#region BOTTONE DI RICERCA -->
       <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
-        (matChipInputTokenEnd)="add($event)" />
-      </mat-chip-grid>
+        (matChipInputTokenEnd)="add($event)"/>
+        <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
+            class="search-icon searchIngredients-btn">search</mat-icon></button>
+      <!--#endregion BOTTONE DI RICERCA -->
 
+      </mat-chip-grid>
     </mat-form-field>
-    <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
-        class="search-icon searchIngredients-btn">search</mat-icon></button>
 </div>
 
 
 <app-navbar *ngIf="recipes.length >0"></app-navbar>
 
 
-
+<!--#region RISULTATO DELLA RICERCA -->
 <div class="search-result">
   <div *ngFor="let hit of recipes" class="item">
     <img [src]="hit.recipe.image">
@@ -69,5 +74,6 @@
     </div>
   </div>
 </div>
+<!--#endregion RISULTATO DELLA RICERCA -->
 
 <span *ngIf="recipes.length> 0" class="spacer"></span>
