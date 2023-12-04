@@ -160,21 +160,21 @@ app-ingredient {
 //-------------------------------------------------------
 //        SCROLLBAR
 
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: transparent;
-}
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 5px;
+//   background-color: transparent;
+// }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 30px;
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 5px grey;
+//   border-radius: 30px;
+// }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: yellow;
-  border-radius: 30px;
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: yellow;
+//   border-radius: 30px;
+// }
 
