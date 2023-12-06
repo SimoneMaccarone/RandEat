@@ -1,4 +1,5 @@
 .footer-basic {
+  margin: auto ;
   display: flex;
   justify-content: center;
   background-color:transparent;
@@ -38,6 +39,7 @@
 }
 
 .footer-basic .social > a {
+
   font-size:24px;
   width:40px;
   height:40px;
@@ -70,9 +72,7 @@
 }
 
 .fa {
-  // padding: 20px;
   font-size: 30px;
-  width: 50px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
@@ -89,23 +89,23 @@
 
 //-------------- RESPONSIVE MOBILE --------------
 
-@media screen and (max-width: 679px){
-  .supercontainer {
-    // border: solid 5px crimson;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    min-height: 40%;
-  }
-}
+// @media screen and (max-width: 679px){
+//   .supercontainer {
+//     // border: solid 5px crimson;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: flex-end;
+//     // min-height: 40%;
+//   }
+// }
 
-@media screen and (max-height: 800px){
-  .supercontainer {
-    // border: solid 5px crimson;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    // min-height: 40%;
-    margin-top: 125px;
-  }
-}
+// @media screen and (max-height: 800px){
+//   .supercontainer {
+//     // border: solid 5px crimson;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: flex-end;
+//     // min-height: 40%;
+//     // margin-top: 125px;
+//   }
+// }

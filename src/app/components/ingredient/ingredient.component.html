@@ -20,7 +20,7 @@
 <div class="container">
   <mat-form-field class="form" > <!--appearance="outline"-->
 
-    <mat-label>Your ingredients:</mat-label>
+    <mat-label>Search your ingredients</mat-label>
 
     <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
 
@@ -32,18 +32,21 @@
         {{fruit.name}}
         <button matChipRemove [attr.aria-label]="'remove ' + fruit.name"><mat-icon>cancel</mat-icon></button>
       </mat-chip-row>
-
       <!--#region BOTTONE DI RICERCA -->
-      <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+      <input placeholder="Enter your ingredients..."
+        [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
         (matChipInputTokenEnd)="add($event)"/>
-        <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
-            class="search-icon searchIngredients-btn">search</mat-icon></button>
-      <!--#endregion BOTTONE DI RICERCA -->
+        <!--#endregion BOTTONE DI RICERCA -->
 
       </mat-chip-grid>
     </mat-form-field>
-</div>
+    <!-- <div style="display: flex; justify-content: center;"> -->
+      <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon class="search-icon searchIngredients-btn">search</mat-icon></button>
+    <!-- </div> -->
+
+    </div>
 
 
 <app-navbar *ngIf="recipes.length >0"></app-navbar>
