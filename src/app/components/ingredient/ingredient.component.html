@@ -20,8 +20,9 @@
 <div class="container">
   <mat-form-field class="form" > <!--appearance="outline"-->
 
-    <mat-label>Your ingredients:</mat-label>
-
+    <mat-label>Search your ingredients</mat-label>
+    
+    <!-- FORM -->
     <mat-chip-grid class="input" #chipGrid aria-label="Enter ingredients">
 
       <!-- CHIPS -->
@@ -34,16 +35,20 @@
       </mat-chip-row>
 
       <!--#region BOTTONE DI RICERCA -->
-      <input placeholder="Enter your ingredients..." [matChipInputFor]="chipGrid"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+      <input placeholder="Enter your ingredients..."
+        [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
         (matChipInputTokenEnd)="add($event)"/>
-        <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon
-            class="search-icon searchIngredients-btn">search</mat-icon></button>
-      <!--#endregion BOTTONE DI RICERCA -->
+        <!--#endregion BOTTONE DI RICERCA -->
 
       </mat-chip-grid>
     </mat-form-field>
-</div>
+    <!-- <div style="display: flex; justify-content: center;"> -->
+      <button class="searchIngredients-btn" (click)="searchRecipes()"><mat-icon class="search-icon searchIngredients-btn">search</mat-icon></button>
+    <!-- </div> -->
+
+    </div>
 
 
 <app-navbar *ngIf="recipes.length >0"></app-navbar>
@@ -60,17 +65,20 @@
         <a class="view-btn" target="_blank" [href]="hit.recipe.url">View Recipe</a>
       </div>
 
-      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>Time:
-        {{hit.recipe.totalTime}} min</p>
-      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{
-        hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
-      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{
-        hit.recipe.calories.toFixed(0) }} kcal</p>
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>
+        Time:{{hit.recipe.totalTime}} min</p>
+
+      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>
+        Diet label: {{hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'NoDataFound'}}</p>
+        
+      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>
+        Calories: {{hit.recipe.calories.toFixed(0) }} kcal</p>
 
       <details class="item-data health-labels">
         <summary><span class="material-symbols-outlined">psychiatry</span>Health labels...</summary>
         <p class="labels-health">{{ hit.recipe.healthLabels }}</p>
       </details>
+      
     </div>
   </div>
 </div>
