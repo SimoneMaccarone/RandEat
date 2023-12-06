@@ -1,11 +1,15 @@
+<!--#region RICERCA -->
 <form (submit)="onSubmit()">
   <!-- <input type="text"  [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}"> -->
   <input type="text" placeholder="Search your recipe..." [(ngModel)]="searchQuery" name="searchQuery"><mat-icon
     class="search-icon">search</mat-icon>
 </form>
+<!--#endregion RICERCA -->
+
 
 <app-navbar *ngIf="searchResults.length > 0"></app-navbar>
 
+<!--#region RISULTATO DELLA RICERCA -->
 <div class="search-result">
   <div *ngFor="let hit of searchResults" class="item">
     <img [src]="hit.recipe.image">
@@ -17,12 +21,14 @@
       </div>
 
       <!-- <p> {{hit.recipe.}} </p> -->
-      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>Time:
-        {{hit.recipe.totalTime}} min</p>
-      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>Diet label: {{
-        hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'Undefined'}}</p>
-      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>Calories: {{
-        hit.recipe.calories.toFixed(0) }} kcal</p>
+      <p class="item-data" *ngIf="hit.recipe.totalTime > 0"><span class="material-symbols-outlined">timer</span>
+        Time:{{hit.recipe.totalTime}} min</p>
+        
+      <p class="item-data"><span class="material-symbols-outlined">nutrition</span>
+      Diet label: {{hit.recipe.dietLabels.length>0?hit.recipe.dietLabels:'Undefined'}}</p>
+      
+      <p class="item-data"><span class="material-symbols-outlined">local_fire_department</span>
+      Calories: {{hit.recipe.calories.toFixed(0) }} kcal</p>
 
       <details class="item-data health-labels">
         <summary><span class="material-symbols-outlined">psychiatry</span>Health labels...</summary>
@@ -31,5 +37,6 @@
     </div>
   </div>
 </div>
+<!--#endregion RISULTATO DELLA RICERCA -->
 
 <span *ngIf="searchResults.length >0" class="spacer"></span>

@@ -1,1 +1,75 @@
 // CARD SCCC
+.search-result {
+    // margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-gap: 25px;
+    grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .item {
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(37, 37, 37, 0.7);
+    // padding: 15px;
+    overflow: scroll;
+    // overflow: hidden;
+    overflow-y:hidden ;
+    overflow-x: hidden ;
+  }
+
+  .item img {
+    width: 100%;
+    height: 300px;
+    padding: 0px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .item-data {
+    display: flex;
+    color: whitesmoke;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
+    line-height: 2rem;
+    align-items: center;
+  }
+  .pad {
+    padding: 15px;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .search-result .title {
+    color: whitesmoke;
+    margin: 20px 10px 0 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .spacer{
+    margin: 50px;
+  }
+
+  .health-labels{
+    overflow:auto ;
+  }
+  
+  details>summary {
+    list-style: none;
+  }
+  
+  .labels-health{
+    margin: 10px;
+  }
