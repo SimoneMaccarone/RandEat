@@ -89,23 +89,23 @@
 
 //-------------- RESPONSIVE MOBILE --------------
 
-// @media screen and (max-width: 679px){
-//   .supercontainer {
-//     // border: solid 5px crimson;
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: flex-end;
-//     // min-height: 40%;
-//   }
-// }
+@media screen and (max-width: 679px){
+  .supercontainer {
+    // border: solid 5px crimson;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    // min-height: 40%;
+  }
+}
 
-// @media screen and (max-height: 800px){
-//   .supercontainer {
-//     // border: solid 5px crimson;
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: flex-end;
-//     // min-height: 40%;
-//     // margin-top: 125px;
-//   }
-// }
+@media screen and (max-height: 800px){
+  .supercontainer {
+    // border: solid 5px crimson;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    // min-height: 40%;
+    // margin-top: 125px;
+  }
+}

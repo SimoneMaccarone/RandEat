@@ -21,7 +21,28 @@ section{
 }
 
 app-footer{
-  border-color: solid 1px green;
   display: flex;
   flex-direction: column;
+}
+
+
+@media screen and (max-width: 679px){
+  section{
+    background: url(../assets/wallpaper/3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1300px;
+}
+}
+
+@media screen and (max-height: 800px){
+  section{
+    background: url(../assets/wallpaper/3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1300px;
+}
+
 }
