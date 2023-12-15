@@ -11,6 +11,8 @@
     width: 100%;
     border-radius: 8px;
     background-color: rgba(37, 37, 37, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+
     // padding: 15px;
     overflow: scroll;
     // overflow: hidden;
@@ -33,7 +35,7 @@
 
   .item-data {
     display: flex;
-    color: whitesmoke;
+    // color: whitesmoke;
     margin-top: 10px;
     font-size: 1.4rem;
     letter-spacing: 0.05rem;
@@ -67,7 +69,7 @@
   }
   
   details>summary {
-    list-style: none;
+    // list-style: none;
   }
   
   .labels-health{

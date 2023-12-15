@@ -13,15 +13,17 @@ img {
   object-fit: cover;
 }
 
-.item-data {
-  color: whitesmoke;
-  // display: flex;
+.item-data-random {
+  // color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+
   margin-top: 10px;
   font-size: 1.4rem;
   letter-spacing: 0.05rem;
   line-height: 2rem;
-  align-items: center;
 }
+
 
 .search-result {
   margin-top: 15px;
@@ -33,13 +35,6 @@ img {
   justify-content: center;
 }
 
-.item {
-  width: 100%;
-  border-radius: 8px;
-  background-color: rgb(37, 37, 37, 0.7);
-  // padding: 15px;
-  overflow: hidden;
-}
 
 .item img {
   width: 100%;
@@ -57,7 +52,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   padding: 15px;
 }
 
@@ -67,12 +62,6 @@ img {
   align-self: flex-end;
 }
 
-.search-result .title {
-  color: whitesmoke;
-  margin: 20px 10px 0 0;
-  font-size: 1.8rem;
-  font-weight: 400;
-}
 
 .reloadRecipe{
   display: flex;
@@ -98,10 +87,7 @@ img {
   margin: 20px;
 }
 
-details>summary {
-  list-style: none;
-}
 
 details>summary::-webkit-details-marker {
-  display: none;
+  // display: none;
 }
