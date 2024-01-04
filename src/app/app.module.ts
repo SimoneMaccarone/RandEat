@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ReturnHomeBtnComponent } from './functions/return-home-btn/return-home-btn.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScrollToTopComponent } from './functions/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     ReturnHomeBtnComponent,
     FooterComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     BrowserModule,
