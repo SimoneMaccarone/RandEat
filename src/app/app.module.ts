@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReturnHomeBtnComponent } from './functions/return-home-btn/return-home-btn.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollToTopComponent } from './functions/scroll-to-top/scroll-to-top.component';
+import { ScrollButtonComponent } from './functions/scroll-button/scroll-button.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ScrollToTopComponent } from './functions/scroll-to-top/scroll-to-top.co
     ReturnHomeBtnComponent,
     FooterComponent,
     ScrollToTopComponent,
+    ScrollButtonComponent,
   ],
   imports: [
     BrowserModule,

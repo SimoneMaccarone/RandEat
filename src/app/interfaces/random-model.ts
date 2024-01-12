@@ -20,7 +20,7 @@ export interface RandomRecipeModel {
   strIngredient10: string
   strIngredient11: string
   strIngredient12: string
-  strIngredient13: any
+  strIngredient13: string
   strIngredient14: string
   strIngredient15: string
   strIngredient16: string
